@@ -1,0 +1,21 @@
+<section class="py-16 px-4" id="pricing-preview">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-surface-900 dark:text-white mb-4">简单透明的定价</h2>
+      <p class="text-surface-600 dark:text-surface-400 text-lg max-w-2xl mx-auto">选择最适合你的套餐，所有套餐均支持随时升级</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {% for plan in site.pricing %}
+      <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-bold text-surface-900 dark:text-white mb-2">{{ plan.title }}</h3>
+        <div class="text-4xl font-extrabold text-longmao-600 dark:text-longmao-400 my-4">{{ plan.price }}</div>
+        <p class="text-surface-500 dark:text-surface-400 mb-6">{{ plan.description }}</p>
+        <a href="{{ plan.url }}" class="inline-block px-6 py-3 bg-longmao-600 hover:bg-longmao-700 text-white rounded-full font-medium transition-colors">立即购买</a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/pricing" class="text-longmao-600 dark:text-longmao-400 hover:underline font-medium">查看完整套餐对比 →</a>
+    </div>
+  </div>
+</section>
