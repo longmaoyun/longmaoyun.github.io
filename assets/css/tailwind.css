@@ -177,11 +177,47 @@
 
   /* ----- Wiki / Docs ----- */
   .wiki-content {
-    @apply prose prose-surface dark:prose-invert max-w-none
-           prose-headings:font-display prose-headings:text-surface-900 dark:prose-headings:text-white
-           prose-a:text-longmao-600 dark:prose-a:text-longmao-400 prose-a:no-underline hover:prose-a:underline
-           prose-code:text-longmao-700 dark:prose-code:text-longmao-300
-           prose-pre:bg-surface-900 dark:prose-pre:bg-surface-950 prose-pre:text-surface-100;
+    max-width: none;
+    line-height: 1.75;
+    color: #334155;
+  }
+  .dark .wiki-content {
+    color: #cbd5e1;
+  }
+  .wiki-content h1, .wiki-content h2, .wiki-content h3, .wiki-content h4 {
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .dark .wiki-content h1, .dark .wiki-content h2, .dark .wiki-content h3, .dark .wiki-content h4 {
+    color: #ffffff;
+  }
+  .wiki-content a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .wiki-content a:hover {
+    text-decoration: underline;
+  }
+  .dark .wiki-content a {
+    color: #60a5fa;
+  }
+  .wiki-content code {
+    color: #1d4ed8;
+    font-size: 0.875em;
+  }
+  .dark .wiki-content code {
+    color: #93c5fd;
+  }
+  .wiki-content pre {
+    background: #0f172a;
+    color: #f1f5f9;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .dark .wiki-content pre {
+    background: #020617;
   }
 
   /* ----- Tags / Badges ----- */
