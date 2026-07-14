@@ -25,7 +25,12 @@
   }
 
   ::selection {
-    @apply bg-longmao-500/30 text-longmao-900 dark:text-longmao-100;
+    background-color: rgba(59, 130, 246, 0.3);
+    color: #1e3a8a;
+  }
+  .dark ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: #dbeafe;
   }
 
   /* Custom scrollbar */
@@ -35,15 +40,22 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface-300 dark:bg-surface-700 rounded-full;
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-surface-400 dark:bg-surface-600;
+    background: #94a3b8;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
   }
 }
 
@@ -70,7 +82,12 @@
   }
 
   .glass-card-hover:hover {
-    @apply shadow-glass-lg -translate-y-1 bg-glass-medium dark:bg-glass-heavy;
+    box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.45);
+    transform: translateY(-0.25rem);
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .dark .glass-card-hover:hover {
+    background: rgba(0, 0, 0, 0.10);
   }
 
   /* ----- Glassmorphism Navbar ----- */
@@ -247,23 +264,22 @@
    Dark Mode Overrides
    ========================================================================= */
 
-.dark {
-  /* Dark mode specific adjustments for glassmorphism */
-  .glass-card,
-  .glass-card-sm,
-  .glass-card-lg {
-    border-color: rgba(255, 255, 255, 0.08);
-  }
+/* Dark mode specific adjustments for glassmorphism */
+.dark .glass-card,
+.dark .glass-card-sm,
+.dark .glass-card-lg {
+  border-color: rgba(255, 255, 255, 0.08);
+}
 
-  /* Dark mode hero */
-  .hero-section {
-    @apply from-surface-950 via-surface-950 to-surface-900;
-  }
+/* Dark mode hero */
+.dark .hero-section {
+  background: linear-gradient(to bottom, #020617, #020617, #0f172a);
+}
 
-  /* Dark mode feature icons */
-  .feature-icon {
-    @apply bg-surface-800 text-longmao-400;
-  }
+/* Dark mode feature icons */
+.dark .feature-icon {
+  background: #1e293b;
+  color: #60a5fa;
 }
 
 /* =========================================================================
