@@ -1,0 +1,56 @@
+---
+layout: page
+title: "公告 - 龙猫云机场"
+description: "龙猫云机场官方公告，发布系统维护、产品更新、活动优惠等重要通知。"
+permalink: /announcement/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>公告</h1>
+    <p class="page-subtitle">官方发布 · 重要通知 · 活动资讯</p>
+  </div>
+</div>
+
+<section class="announcement-section">
+  <div class="container">
+    <div class="announcement-list">
+      {% assign announcements = site.posts | where: 'categories', '公告' | sort: 'date' | reverse %}
+      {% if announcements.size > 0 %}
+        {% for post in announcements %}
+        <div class="announcement-card {% if post.important %}important{% endif %}">
+          <div class="announcement-badge">
+            {% if post.important %}<span class="badge badge-danger">重要</span>{% endif %}
+            <span class="badge badge-info">{{ post.date | date: "%Y-%m-%d" }}</span>
+          </div>
+          <h2 class="announcement-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p class="announcement-excerpt">{{ post.description }}</p>
+          <a href="{{ post.url }}" class="btn btn-sm btn-link">阅读详情 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="announcement-empty">
+          <div class="empty-state">
+            <i class="fas fa-bullhorn fa-3x"></i>
+            <h3>暂无公告</h3>
+            <p>目前没有新的公告，请稍后再来查看。</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="announcement-subscribe">
+      <h3>订阅公告</h3>
+      <p>想要第一时间接收重要通知？您可以通过以下方式关注我们：</p>
+      <ul>
+        <li><i class="fas fa-envelope"></i> 邮件订阅：输入邮箱地址，接收最新公告推送</li>
+        <li><i class="fab fa-telegram"></i> Telegram 频道：加入我们的 Telegram 频道获取实时通知</li>
+        <li><i class="fas fa-rss"></i> RSS 订阅：<a href="/feed.xml">订阅 RSS 源</a></li>
+      </ul>
+      <div class="subscribe-form">
+        <input type="email" placeholder="输入您的邮箱地址" class="form-control">
+        <button class="btn btn-primary">订阅</button>
+      </div>
+    </div>
+  </div>
+</section>

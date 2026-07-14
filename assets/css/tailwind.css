@@ -1,0 +1,287 @@
+/* =========================================================================
+   龙猫云机场 (Longmao Cloud) - Tailwind CSS Source
+   Apple + Cloudflare inspired glassmorphism design system
+   ========================================================================= */
+
+/* ----- Tailwind Directives ----- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   Base Styles
+   ========================================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-50 text-surface-900 dark:bg-surface-950 dark:text-surface-100;
+    font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-longmao-500/30 text-longmao-900 dark:text-longmao-100;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-300 dark:bg-surface-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-400 dark:bg-surface-600;
+  }
+}
+
+/* =========================================================================
+   Component Styles
+   ========================================================================= */
+
+@layer components {
+  /* ----- Glassmorphism Cards ----- */
+  .glass-card {
+    @apply backdrop-blur-md bg-glass-light dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark rounded-glass shadow-glass;
+  }
+
+  .glass-card-sm {
+    @apply backdrop-blur-sm bg-glass-light dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark rounded-glass-sm shadow-glass-sm;
+  }
+
+  .glass-card-lg {
+    @apply backdrop-blur-lg bg-glass-heavy dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark rounded-glass-lg shadow-glass-lg;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 ease-out;
+  }
+
+  .glass-card-hover:hover {
+    @apply shadow-glass-lg -translate-y-1 bg-glass-medium dark:bg-glass-heavy;
+  }
+
+  /* ----- Glassmorphism Navbar ----- */
+  .glass-nav {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-surface-950/70 border-b border-glass-border dark:border-glass-border-dark;
+  }
+
+  /* ----- Glassmorphism Buttons ----- */
+  .btn-glass {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-glass-sm font-medium
+           backdrop-blur-md bg-glass-light dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark
+           text-surface-800 dark:text-surface-100 shadow-glass-sm
+           transition-all duration-200 ease-out
+           hover:bg-glass-medium dark:hover:bg-glass-heavy hover:shadow-glass
+           active:scale-[0.97];
+  }
+
+  .btn-glass-primary {
+    @apply btn-glass bg-longmao-500/20 dark:bg-longmao-500/30 border-longmao-400/30 dark:border-longmao-400/20
+           text-longmao-700 dark:text-longmao-300
+           hover:bg-longmao-500/30 dark:hover:bg-longmao-500/40 hover:border-longmao-400/40;
+  }
+
+  .btn-glass-accent {
+    @apply btn-glass bg-longmao-500 text-white border-longmao-500
+           shadow-longmao-500/25
+           hover:bg-longmao-600 hover:shadow-longmao-500/40;
+  }
+
+  /* ----- Hero Section ----- */
+  .hero-section {
+    @apply relative overflow-hidden bg-gradient-to-b from-longmao-50/50 via-white to-white
+           dark:from-surface-950 dark:via-surface-950 dark:to-surface-900;
+  }
+
+  .hero-glow {
+    @apply absolute inset-0 bg-hero-glow pointer-events-none;
+  }
+
+  /* ----- Feature Grid Items ----- */
+  .feature-card {
+    @apply glass-card-hover p-6 flex flex-col items-start gap-4;
+  }
+
+  .feature-icon {
+    @apply flex items-center justify-center w-12 h-12 rounded-xl
+           bg-longmao-100 dark:bg-longmao-900/50 text-longmao-600 dark:text-longmao-400;
+  }
+
+  /* ----- Section Headers ----- */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-surface-900 dark:text-white tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-surface-500 dark:text-surface-400 max-w-2xl mx-auto;
+  }
+
+  /* ----- Pricing Cards ----- */
+  .pricing-card {
+    @apply glass-card p-8 flex flex-col gap-6 relative overflow-hidden;
+  }
+
+  .pricing-card-featured {
+    @apply pricing-card border-longmao-400/40 dark:border-longmao-400/30 shadow-glass-lg;
+  }
+
+  .pricing-badge {
+    @apply absolute top-4 right-4 px-3 py-1 text-xs font-semibold uppercase tracking-wider
+           rounded-full bg-longmao-500 text-white;
+  }
+
+  /* ----- FAQ Accordion ----- */
+  .faq-item {
+    @apply glass-card-sm overflow-hidden transition-all duration-200;
+  }
+
+  .faq-question {
+    @apply w-full flex items-center justify-between px-6 py-4 text-left
+           font-medium text-surface-800 dark:text-surface-200
+           hover:bg-glass-light dark:hover:bg-glass-dark transition-colors;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-4 text-surface-600 dark:text-surface-400 leading-relaxed;
+  }
+
+  /* ----- Wiki / Docs ----- */
+  .wiki-content {
+    @apply prose prose-surface dark:prose-invert max-w-none
+           prose-headings:font-display prose-headings:text-surface-900 dark:prose-headings:text-white
+           prose-a:text-longmao-600 dark:prose-a:text-longmao-400 prose-a:no-underline hover:prose-a:underline
+           prose-code:text-longmao-700 dark:prose-code:text-longmao-300
+           prose-pre:bg-surface-900 dark:prose-pre:bg-surface-950 prose-pre:text-surface-100;
+  }
+
+  /* ----- Tags / Badges ----- */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+           bg-longmao-100 dark:bg-longmao-900/40 text-longmao-700 dark:text-longmao-300;
+  }
+
+  .tag-surface {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+           bg-surface-200 dark:bg-surface-800 text-surface-700 dark:text-surface-300;
+  }
+}
+
+/* =========================================================================
+   Utility Classes
+   ========================================================================= */
+
+@layer utilities {
+  /* ----- Text ----- */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-longmao-500 to-longmao-700 dark:from-longmao-400 dark:to-longmao-600;
+  }
+
+  .text-gradient-glow {
+    @apply text-gradient;
+    text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  }
+
+  /* ----- Backdrop ----- */
+  .backdrop-blur-glass {
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+
+  .backdrop-blur-glass-lg {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* ----- Borders ----- */
+  .border-gradient {
+    border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(96, 165, 250, 0.2)) 1;
+  }
+
+  /* ----- Animations ----- */
+  .animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-in-delay-1 { animation-delay: 0.1s; }
+  .animate-in-delay-2 { animation-delay: 0.2s; }
+  .animate-in-delay-3 { animation-delay: 0.3s; }
+  .animate-in-delay-4 { animation-delay: 0.4s; }
+  .animate-in-delay-5 { animation-delay: 0.5s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ----- Glass overlay helper ----- */
+  .glass-overlay {
+    @apply absolute inset-0 backdrop-blur-sm bg-white/30 dark:bg-black/30;
+  }
+}
+
+/* =========================================================================
+   Dark Mode Overrides
+   ========================================================================= */
+
+.dark {
+  /* Dark mode specific adjustments for glassmorphism */
+  .glass-card,
+  .glass-card-sm,
+  .glass-card-lg {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Dark mode hero */
+  .hero-section {
+    @apply from-surface-950 via-surface-950 to-surface-900;
+  }
+
+  /* Dark mode feature icons */
+  .feature-icon {
+    @apply bg-surface-800 text-longmao-400;
+  }
+}
+
+/* =========================================================================
+   Print Styles
+   ========================================================================= */
+
+@media print {
+  .glass-card,
+  .glass-card-sm,
+  .glass-card-lg {
+    backdrop-filter: none;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: none;
+  }
+
+  .glass-nav {
+    backdrop-filter: none;
+    background: white;
+  }
+}

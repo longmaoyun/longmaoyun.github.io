@@ -1,0 +1,44 @@
+<!-- Announcement Bar -->
+{% if site.announcement.enabled == true %}
+<div class="relative bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-900 text-white text-sm overflow-hidden" x-data="{ dismissed: localStorage.getItem('announcement_dismissed') === 'true' }" x-show="!dismissed">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+    <div class="flex items-center justify-center gap-3">
+      <!-- Scrolling content on mobile, static on desktop -->
+      <div class="flex items-center gap-2 overflow-hidden">
+        {% if site.announcement.icon %}
+        <i class="{{ site.announcement.icon }} text-white/80 shrink-0"></i>
+        {% else %}
+        <i class="fas fa-bullhorn text-white/80 shrink-0"></i>
+        {% endif %}
+        <span class="truncate max-w-[250px] sm:max-w-none">
+          {{ site.announcement.text | default: '新用户专享：注册即享 3 天免费试用！' }}
+        </span>
+        {% if site.announcement.link %}
+        <a href="{{ site.announcement.link | relative_url }}" class="hidden sm:inline-flex items-center gap-1 text-white/80 hover:text-white underline underline-offset-2 transition-colors shrink-0">
+          了解更多
+          <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+        {% endif %}
+      </div>
+
+      <!-- Dismiss button -->
+      <button @click="dismissed = true; localStorage.setItem('announcement_dismissed', 'true')" class="shrink-0 p-1 rounded-lg hover:bg-white/10 transition-colors" aria-label="关闭公告">
+        <i class="fas fa-times text-sm"></i>
+      </button>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<style>
+/* Announcement bar scroll animation for small screens */
+@media (max-width: 640px) {
+  .announcement-scroll {
+    animation: scroll-announcement 20s linear infinite;
+  }
+  @keyframes scroll-announcement {
+    0%, 20% { transform: translateX(0); }
+    80%, 100% { transform: translateX(-100%); }
+  }
+}
+</style>

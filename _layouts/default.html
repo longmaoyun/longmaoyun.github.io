@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches), mobileMenuOpen: false }" x-init="$watch('darkMode', val => { localStorage.setItem('darkMode', val); document.documentElement.classList.toggle('dark', val); }); document.documentElement.classList.toggle('dark', darkMode);">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  {% seo %}
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {% if page.custom_css %}
+    {% for stylesheet in page.custom_css %}
+    <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if page.custom_head %}
+    {{ page.custom_head }}
+  {% endif %}
+</head>
+<body class="bg-white dark:bg-[#0a1628] text-gray-900 dark:text-gray-100 font-sans antialiased">
+
+  {% include announcement-bar.html %}
+  {% include header.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include cookie-consent.html %}
+
+  <!-- Alpine.js Core -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" crossorigin="anonymous"></script>
+
+  <!-- AOS.js -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous"></script>
+
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+
+  <!-- Main JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+  {% if page.custom_js %}
+    {% for script in page.custom_js %}
+    <script src="{{ script | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+
+  <script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+      });
+    });
+
+    // GSAP ScrollTrigger registration
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+      }
+    });
+  </script>
+</body>
+</html>

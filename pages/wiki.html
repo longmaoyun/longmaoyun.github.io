@@ -1,0 +1,74 @@
+---
+layout: page
+title: "Wiki 知识库 - 龙猫云机场"
+description: "龙猫云机场 Wiki 知识库，包含详细的技术文档、配置指南、教程文章，帮助用户全面了解和使用龙猫云机场的各项功能。"
+permalink: /wiki/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Wiki 知识库</h1>
+    <p class="page-subtitle">全面技术文档 · 深入技术解析 · 最佳实践</p>
+  </div>
+</div>
+
+<section class="wiki-section">
+  <div class="container">
+    <div class="wiki-intro">
+      <p>龙猫云机场 Wiki 知识库汇集了全面的技术文档和使用指南。无论您是新手还是高级用户，都能在这里找到有价值的内容。知识库持续更新中，欢迎收藏和分享。</p>
+    </div>
+
+    <div class="wiki-categories">
+      {% assign wiki_items = site.wiki | sort: 'date' | reverse %}
+      {% assign categories = wiki_items | map: 'category' | uniq %}
+
+      {% for category in categories %}
+      <div class="wiki-category-block">
+        <h2 class="wiki-category-title">{{ category }}</h2>
+        <div class="wiki-list">
+          {% assign cat_items = wiki_items | where: 'category', category %}
+          {% for item in cat_items %}
+          <div class="wiki-card">
+            <div class="wiki-card-header">
+              <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+              <span class="wiki-date">{{ item.date | date: "%Y-%m-%d" }}</span>
+            </div>
+            <p class="wiki-excerpt">{{ item.description }}</p>
+            <div class="wiki-meta">
+              <span class="wiki-reading-time"><i class="far fa-clock"></i> {{ item.content | reading_time }} 分钟阅读</span>
+              <span class="wiki-author"><i class="far fa-user"></i> {{ item.author | default: '龙猫云团队' }}</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="wiki-tags">
+      <h3>标签云</h3>
+      <div class="tags-cloud">
+        <a href="#" class="tag">入门</a>
+        <a href="#" class="tag">Windows</a>
+        <a href="#" class="tag">macOS</a>
+        <a href="#" class="tag">Android</a>
+        <a href="#" class="tag">iOS</a>
+        <a href="#" class="tag">Linux</a>
+        <a href="#" class="tag">路由器</a>
+        <a href="#" class="tag">OpenWRT</a>
+        <a href="#" class="tag">订阅</a>
+        <a href="#" class="tag">DNS</a>
+        <a href="#" class="tag">分流</a>
+        <a href="#" class="tag">高级配置</a>
+        <a href="#" class="tag">故障排除</a>
+        <a href="#" class="tag">优化</a>
+        <a href="#" class="tag">安全</a>
+      </div>
+    </div>
+
+    <div class="wiki-contribute">
+      <h3>贡献文档</h3>
+      <p>我们欢迎社区用户贡献和分享使用经验。如果您有好的教程或技术文章想要分享，请通过 <a href="/contact/">联系我们</a> 页面提交，优质内容将收录至 Wiki 知识库并署名感谢！</p>
+    </div>
+  </div>
+</section>

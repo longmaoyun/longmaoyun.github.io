@@ -1,0 +1,63 @@
+brand:
+  name: "龙猫云机场"
+  short_name: "龙猫云"
+  tagline: "高速 · 稳定 · 安全"
+  description: "龙猫云机场 - 高速稳定的网络加速服务，支持全平台客户端，全球优质节点，畅享无障碍网络体验。"
+  url: "https://www.longmaoyun.com"
+  email: "support@longmaoyun.com"
+  business_email: "business@longmaoyun.com"
+  since: 2022
+
+social:
+  telegram: "https://t.me/longmaoyun"
+  twitter: "https://twitter.com/longmaoyun"
+  github: "https://github.com/longmaoyun"
+  email: "mailto:support@longmaoyun.com"
+  rss: "/feed.xml"
+
+links:
+  - title: "产品"
+    items:
+      - name: "套餐定价"
+        url: "/pricing/"
+      - name: "全球节点"
+        url: "/nodes/"
+      - name: "客户端下载"
+        url: "/download/"
+      - name: "产品更新"
+        url: "/blog/"
+
+  - title: "帮助"
+    items:
+      - name: "教程中心"
+        url: "/tutorial/"
+      - name: "常见问题"
+        url: "/faq/"
+      - name: "Wiki 知识库"
+        url: "/wiki/"
+      - name: "联系我们"
+        url: "/contact/"
+
+  - title: "关于"
+    items:
+      - name: "品牌故事"
+        url: "/about/"
+      - name: "官方公告"
+        url: "/announcement/"
+      - name: "博客"
+        url: "/blog/"
+      - name: "加入我们"
+        url: "/contact/"
+
+  - title: "法律"
+    items:
+      - name: "服务条款"
+        url: "/terms/"
+      - name: "隐私政策"
+        url: "/privacy/"
+      - name: "退款政策"
+        url: "/refund/"
+      - name: "免责声明"
+        url: "/disclaimer/"
+
+copyright: "© 2022-2025 龙猫云机场 Longmao Cloud. All rights reserved."

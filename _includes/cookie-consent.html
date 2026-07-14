@@ -1,0 +1,31 @@
+<!-- Cookie Consent Banner -->
+<div x-data="{ show: !localStorage.getItem('cookie_consent_accepted') }" x-show="show" x-init="$watch('show', val => { if (!val) localStorage.setItem('cookie_consent_accepted', 'true'); })" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-y-full opacity-0" x-transition:enter-end="translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0 opacity-100" x-transition:leave-end="translate-y-full opacity-0" class="fixed bottom-0 left-0 right-0 z-50 p-4" style="display: none;">
+  <div class="container mx-auto max-w-5xl">
+    <div class="relative p-4 sm:p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xl shadow-black/10 dark:shadow-black/30 backdrop-blur-xl bg-white/95 dark:bg-gray-800/95">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white shrink-0">
+            <i class="fas fa-cookie-bite text-sm"></i>
+          </div>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            <span class="font-semibold">本网站使用 Cookie</span>
+            <span class="text-gray-500 dark:text-gray-400"> — 我们使用 Cookie 来改善您的浏览体验、分析流量和提供个性化内容。继续使用本网站即表示您同意我们的</span>
+            <a href="{{ '/privacy' | relative_url }}" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">隐私政策</a>
+            <span class="text-gray-500 dark:text-gray-400">和</span>
+            <a href="{{ '/terms' | relative_url }}" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">服务条款</a>。
+          </p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button @click="show = false" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+            拒绝
+          </button>
+          <button @click="show = false" class="px-5 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25 transition-all duration-200">
+            接受
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

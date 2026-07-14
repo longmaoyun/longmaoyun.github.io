@@ -1,0 +1,124 @@
+---
+layout: default
+---
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Page Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">{{ page.title | default: "常见问题" }}</h1>
+      {% if page.description %}
+      <p class="mt-4 text-lg text-gray-500 dark:text-gray-400">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <!-- FAQ Categories Accordion -->
+    {% if page.faq_categories %}
+      {% for category in page.faq_categories %}
+      <section class="mb-10">
+        <h2 id="{{ category.name | slugify }}" class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
+          {% if category.icon %}
+          <i class="{{ category.icon }} mr-3 text-blue-500"></i>
+          {% endif %}
+          {{ category.name }}
+        </h2>
+
+        <div class="space-y-3" x-data="{ activeFaq: null }">
+          {% for item in category.items %}
+          <div class="faq-item bg-white dark:bg-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow" id="faq-{{ item.question | slugify }}">
+            <button @click="activeFaq = activeFaq === '{{ item.question | slugify }}-{{ forloop.index }}' ? null : '{{ item.question | slugify }}-{{ forloop.index }}'" class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+              <span class="flex items-center gap-3">
+                <i class="fas fa-question-circle text-blue-500 text-sm"></i>
+                <span>{{ item.question }}</span>
+              </span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300 shrink-0" :class="activeFaq === '{{ item.question | slugify }}-{{ forloop.index }}' ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="activeFaq === '{{ item.question | slugify }}-{{ forloop.index }}'" x-collapse.duration.300ms class="px-5 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+              {{ item.answer | markdownify }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    {% elsif page.faq_items %}
+      <!-- Flat FAQ list (no categories) -->
+      <div class="space-y-3" x-data="{ activeFaq: null }">
+        {% for item in page.faq_items %}
+        <div class="faq-item bg-white dark:bg-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow" id="faq-{{ item.question | slugify }}">
+          <button @click="activeFaq = activeFaq === '{{ item.question | slugify }}-{{ forloop.index }}' ? null : '{{ item.question | slugify }}-{{ forloop.index }}'" class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+            <span class="flex items-center gap-3">
+              <i class="fas fa-question-circle text-blue-500 text-sm"></i>
+              <span>{{ item.question }}</span>
+            </span>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300 shrink-0" :class="activeFaq === '{{ item.question | slugify }}-{{ forloop.index }}' ? 'rotate-180' : ''"></i>
+          </button>
+          <div x-show="activeFaq === '{{ item.question | slugify }}-{{ forloop.index }}'" x-collapse.duration.300ms class="px-5 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+            {{ item.answer | markdownify }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- Fallback: empty FAQ -->
+      <div class="text-center py-16 text-gray-400 dark:text-gray-500">
+        <i class="fas fa-inbox text-5xl mb-4 block"></i>
+        <p>暂无常见问题，敬请期待。</p>
+      </div>
+    {% endif %}
+
+    <!-- Still have questions -->
+    <section class="mt-16 text-center bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-10 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">还有其他问题？</h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-6">我们随时为您提供帮助</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="{{ '/contact' | relative_url }}" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/25">
+          <i class="fas fa-headset mr-2"></i>联系客服
+        </a>
+        <a href="{{ site.social.telegram | default: '#' }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+          <i class="fab fa-telegram mr-2"></i>加入 Telegram
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- FAQPage Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% if page.faq_categories %}
+      {% assign all_items = '' | split: '' %}
+      {% for category in page.faq_categories %}
+        {% for item in category.items %}
+          {% assign all_items = all_items | push: item %}
+        {% endfor %}
+      {% endfor %}
+      {% for item in all_items %}
+      {
+        "@type": "Question",
+        "name": {{ item.question | jsonify }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ item.answer | strip_html | strip_newlines | jsonify }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% elsif page.faq_items %}
+      {% for item in page.faq_items %}
+      {
+        "@type": "Question",
+        "name": {{ item.question | jsonify }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ item.answer | strip_html | strip_newlines | jsonify }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% endif %}
+  ]
+}
+</script>

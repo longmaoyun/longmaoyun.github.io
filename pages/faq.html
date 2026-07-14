@@ -1,0 +1,474 @@
+---
+layout: page
+title: "常见问题 - 龙猫云机场 FAQ"
+description: "龙猫云机场常见问题解答，涵盖客户端下载、账号管理、支付方式、套餐选择、订阅配置、节点信息、测速优化、更新升级、DNS设置、连接失败排查、导入失败解决等30+常见问题。"
+permalink: /faq/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>常见问题</h1>
+    <p class="page-subtitle">您的问题，这里都有答案</p>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-search">
+      <input type="text" id="faq-search" placeholder="搜索常见问题..." class="form-control">
+    </div>
+
+    <div class="faq-categories" id="faq-container">
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "龙猫云机场客户端支持哪些平台？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "龙猫云机场支持全平台使用，包括 Windows（7/8/10/11）、macOS（12及以上）、Android（8.0及以上）、iOS（14及以上）、Linux（主流发行版）、路由器/软路由（OpenWRT、梅林、iStoreOS等）。每个平台都提供详细的配置教程。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何在 iOS 上使用龙猫云机场？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "iOS 用户需先在 App Store 下载兼容客户端（推荐 Shadowrocket、Stash 或 Quantumult X），然后复制龙猫云机场的订阅链接，在客户端中导入即可自动获取所有节点信息，全程无需手动配置。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "客户端下载速度慢怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "如遇下载速度慢，建议：1) 尝试更换网络环境（如切换 WiFi 和移动数据）；2) 使用下载工具或开启多线程下载；3) 尝试从备用下载地址下载；4) 联系客服获取直链下载。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何注册龙猫云机场账号？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "访问龙猫云机场官网首页，点击右上角的「注册」按钮，填写邮箱地址和设置密码，完成邮箱验证即可注册成功。注册后即可免费试用，体验我们的服务。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "忘记密码怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "在登录页面点击「忘记密码」，输入注册时使用的邮箱地址，系统会发送重置密码链接到您的邮箱，点击链接即可设置新密码。如未收到邮件，请检查垃圾邮件箱。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何修改账号密码和邮箱？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "登录用户中心后，在「个人设置」中可以修改密码和邮箱。修改密码需要验证当前密码；修改邮箱需要新邮箱验证，原邮箱将收到确认通知。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "支持哪些支付方式？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "我们支持支付宝、微信支付、USDT（加密货币）和银联卡支付。所有支付方式均安全快捷，支付成功后系统自动开通服务，无需人工处理。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "支付后服务未开通怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "一般情况下支付成功后系统会自动开通服务。如遇延迟，请耐心等待1-2分钟。若超过5分钟仍未开通，请检查支付状态是否成功，并联系客服提供支付截图以便人工处理。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "可以申请退款吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。基础版购买后7天内、标准版15天内、专业版30天内可申请无理由全额退款。超出期限按剩余天数比例退款。退款金额将原路返回。详情请查看退款政策。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "套餐到期后数据会保留吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "套餐到期后，您的账号信息和配置数据会保留30天。在此期间续费可继续使用所有节点。超过30天未续费，账号将被注销，数据不可恢复。建议开启自动续费功能。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何选择适合自己的套餐？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "根据使用场景选择：轻度用户（日常浏览、社交）选基础版；中度用户（流媒体、ChatGPT）选标准版；重度用户（4K视频、游戏、多设备）选专业版。所有套餐均不限速、不限设备数。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "套餐可以升级或降级吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以随时在用户中心自助升级或降级。升级只需补足差价（按剩余天数折算），降级将返还差额至账户余额，可用于下次续费。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "年付套餐有什么优惠？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "年付套餐享受约25%的优惠折扣，相当于买10送2。此外年付用户还享有优先客服支持、专属高速节点、免排队等增值权益。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何获取订阅链接？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "登录用户中心，在「订阅管理」页面可以查看和复制您的专属订阅链接。订阅链接包含所有节点信息，支持一键导入各类客户端。请勿将订阅链接泄露给他人。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何在客户端中导入订阅链接？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不同客户端操作略有不同，但通常步骤为：打开客户端 -> 找到订阅/配置管理 -> 添加订阅 -> 粘贴订阅链接 -> 保存/更新。详细操作请查看具体平台的配置教程。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "订阅链接失效了怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "订阅链接失效可能是过期或重置导致的。请重新登录用户中心，在订阅管理页面复制新的订阅链接，并在客户端中更新即可。如频繁失效，请联系客服排查原因。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "龙猫云机场有多少个节点？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "龙猫云机场在全球部署了200+个优质节点，覆盖60+个国家地区，包括亚洲（日本、香港、新加坡、韩国等）、美洲（美国、加拿大、巴西等）、欧洲（英国、德国、法国、荷兰等）、大洋洲（澳大利亚、新西兰）等主要区域。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "节点支持哪些协议？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "我们支持 Shadowsocks、V2Ray（VMess、VLESS）、Trojan、Hysteria2、WireGuard 等多种主流的代理协议，兼容市面上绝大多数代理客户端。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "什么是专线节点？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "专线节点采用 IPLC/IEPL 国际私用租赁线路，是纯物理层隔离的专属通道，不经过公网路由，不受国际网络拥堵影响。高峰期依然保持低延迟和零丢包，SLA 可达99.9%。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何进行节点测速？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "您可以在客户端中直接进行节点测速，大部分客户端内置了延迟测试和速度测试功能。也可以在用户中心的节点列表中在线测速，或使用第三方工具如 Fast.com 进行独立测速验证。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "节点速度慢的可能原因？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可能原因包括：1) 当前节点负载过高，建议切换节点；2) 本地网络运营商限制（如高峰期 QoS）；3) 客户端选错了代理模式或路由规则；4) 使用的协议被深度检测干扰，可尝试更换协议。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何选择延迟最低的节点？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "大多数客户端支持自动选择延迟最低节点的功能。您也可以手动对所有节点进行延迟测试（Ping/TCPing），选择响应时间最短的节点。通常日本、香港、新加坡节点对中国大陆的延迟最低。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "客户端如何更新到最新版本？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PC端客户端通常会在有新版本时自动提示更新，您也可以前往官网下载页面手动下载最新版本覆盖安装。移动端可以在各应用商店中检查更新。我们建议始终保持客户端为最新版本。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "更新后订阅需要重新导入吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "客户端更新不影响已保存的订阅配置，通常无需重新导入。但建议在更新后检查一下订阅是否需要手动刷新，以确保节点列表为最新状态。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何配置 DNS 防止泄漏？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "在客户端设置中，建议将 DNS 设置为加密 DNS（如 8.8.8.8、1.1.1.1 的 DoH/DoT 版本），并开启 DNS 防泄漏功能。避免使用运营商默认 DNS，以防 DNS 查询被劫持或泄露。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "DNS 解析异常怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "如遇 DNS 解析异常，尝试：1) 更换 DNS 服务器为 8.8.8.8 或 1.1.1.1；2) 清除本地 DNS 缓存（ipconfig/flushdns）；3) 检查客户端 DNS 设置是否正确；4) 尝试关闭 IPv6 或调整优先级。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "提示连接失败/超时如何处理？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "连接失败的常见解决方法：1) 确认订阅是否在有效期内；2) 尝试切换其他节点；3) 检查本地网络是否正常；4) 关闭防火墙/安全软件后重试；5) 更新客户端到最新版本；6) 更换代理协议或端口。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "某些网站或应用无法访问？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "如部分网站无法访问，可能原因：1) 当前节点的 IP 被目标服务屏蔽，尝试切换节点；2) 客户端路由规则未正确配置，尝试改用全局模式；3) DNS 解析异常，检查 DNS 设置；4) 协议被深度包检测干扰，切换协议试试。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "导入订阅时提示格式错误？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "格式错误通常由以下原因导致：1) 订阅链接已过期，请重新生成订阅链接；2) 复制时遗漏了部分字符，请完整复制整个链接；3) 客户端不支持订阅格式，尝试更换客户端；4) 订阅链接被截断，检查是否从完整邮件或页面中复制。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "导入后节点列表为空？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "导入后节点为空的原因：1) 订阅链接未正确更新，请在客户端手动点击「更新订阅」；2) 网络问题导致无法获取节点信息，检查网络连接后重试；3) 订阅已过期，请续费后重新导入；4) 客户端版本过旧不兼容，请更新客户端。"
+            }
+          }
+        ]
+      }
+      </script>
+
+      <!-- 客户端下载 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-download"></i> 客户端下载</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">龙猫云机场客户端支持哪些平台？</h4>
+            <div class="faq-answer">龙猫云机场支持全平台使用，包括 Windows（7/8/10/11）、macOS（12及以上）、Android（8.0及以上）、iOS（14及以上）、Linux（主流发行版）、路由器/软路由（OpenWRT、梅林、iStoreOS等）。每个平台都提供详细的配置教程。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">如何在 iOS 上使用龙猫云机场？</h4>
+            <div class="faq-answer">iOS 用户需先在 App Store 下载兼容客户端（推荐 Shadowrocket、Stash 或 Quantumult X），然后复制龙猫云机场的订阅链接，在客户端中导入即可自动获取所有节点信息，全程无需手动配置。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">客户端下载速度慢怎么办？</h4>
+            <div class="faq-answer">如遇下载速度慢，建议：1) 尝试更换网络环境（如切换 WiFi 和移动数据）；2) 使用下载工具或开启多线程下载；3) 尝试从备用下载地址下载；4) 联系客服获取直链下载。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 账号 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-user"></i> 账号</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">如何注册龙猫云机场账号？</h4>
+            <div class="faq-answer">访问龙猫云机场官网首页，点击右上角的「注册」按钮，填写邮箱地址和设置密码，完成邮箱验证即可注册成功。注册后即可免费试用，体验我们的服务。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">忘记密码怎么办？</h4>
+            <div class="faq-answer">在登录页面点击「忘记密码」，输入注册时使用的邮箱地址，系统会发送重置密码链接到您的邮箱，点击链接即可设置新密码。如未收到邮件，请检查垃圾邮件箱。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">如何修改账号密码和邮箱？</h4>
+            <div class="faq-answer">登录用户中心后，在「个人设置」中可以修改密码和邮箱。修改密码需要验证当前密码；修改邮箱需要新邮箱验证，原邮箱将收到确认通知。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 支付 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-credit-card"></i> 支付</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">支持哪些支付方式？</h4>
+            <div class="faq-answer">我们支持支付宝、微信支付、USDT（加密货币）和银联卡支付。所有支付方式均安全快捷，支付成功后系统自动开通服务，无需人工处理。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">支付后服务未开通怎么办？</h4>
+            <div class="faq-answer">一般情况下支付成功后系统会自动开通服务。如遇延迟，请耐心等待1-2分钟。若超过5分钟仍未开通，请检查支付状态是否成功，并联系客服提供支付截图以便人工处理。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">可以申请退款吗？</h4>
+            <div class="faq-answer">可以。基础版购买后7天内、标准版15天内、专业版30天内可申请无理由全额退款。超出期限按剩余天数比例退款。退款金额将原路返回。详情请查看退款政策。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 套餐 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-tags"></i> 套餐</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">套餐到期后数据会保留吗？</h4>
+            <div class="faq-answer">套餐到期后，您的账号信息和配置数据会保留30天。在此期间续费可继续使用所有节点。超过30天未续费，账号将被注销，数据不可恢复。建议开启自动续费功能。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">如何选择适合自己的套餐？</h4>
+            <div class="faq-answer">根据使用场景选择：轻度用户（日常浏览、社交）选基础版；中度用户（流媒体、ChatGPT）选标准版；重度用户（4K视频、游戏、多设备）选专业版。所有套餐均不限速、不限设备数。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">套餐可以升级或降级吗？</h4>
+            <div class="faq-answer">可以随时在用户中心自助升级或降级。升级只需补足差价（按剩余天数折算），降级将返还差额至账户余额，可用于下次续费。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">年付套餐有什么优惠？</h4>
+            <div class="faq-answer">年付套餐享受约25%的优惠折扣，相当于买10送2。此外年付用户还享有优先客服支持、专属高速节点、免排队等增值权益。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 订阅 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-link"></i> 订阅</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">如何获取订阅链接？</h4>
+            <div class="faq-answer">登录用户中心，在「订阅管理」页面可以查看和复制您的专属订阅链接。订阅链接包含所有节点信息，支持一键导入各类客户端。请勿将订阅链接泄露给他人。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">如何在客户端中导入订阅链接？</h4>
+            <div class="faq-answer">不同客户端操作略有不同，但通常步骤为：打开客户端 -> 找到订阅/配置管理 -> 添加订阅 -> 粘贴订阅链接 -> 保存/更新。详细操作请查看具体平台的配置教程。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">订阅链接失效了怎么办？</h4>
+            <div class="faq-answer">订阅链接失效可能是过期或重置导致的。请重新登录用户中心，在订阅管理页面复制新的订阅链接，并在客户端中更新即可。如频繁失效，请联系客服排查原因。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 节点 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-server"></i> 节点</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">龙猫云机场有多少个节点？</h4>
+            <div class="faq-answer">龙猫云机场在全球部署了200+个优质节点，覆盖60+个国家地区，包括亚洲（日本、香港、新加坡、韩国等）、美洲（美国、加拿大、巴西等）、欧洲（英国、德国、法国、荷兰等）、大洋洲（澳大利亚、新西兰）等主要区域。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">节点支持哪些协议？</h4>
+            <div class="faq-answer">我们支持 Shadowsocks、V2Ray（VMess、VLESS）、Trojan、Hysteria2、WireGuard 等多种主流的代理协议，兼容市面上绝大多数代理客户端。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">什么是专线节点？</h4>
+            <div class="faq-answer">专线节点采用 IPLC/IEPL 国际私用租赁线路，是纯物理层隔离的专属通道，不经过公网路由，不受国际网络拥堵影响。高峰期依然保持低延迟和零丢包，SLA 可达99.9%。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 测速 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-tachometer-alt"></i> 测速</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">如何进行节点测速？</h4>
+            <div class="faq-answer">您可以在客户端中直接进行节点测速，大部分客户端内置了延迟测试和速度测试功能。也可以在用户中心的节点列表中在线测速，或使用第三方工具如 Fast.com 进行独立测速验证。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">节点速度慢的可能原因？</h4>
+            <div class="faq-answer">可能原因包括：1) 当前节点负载过高，建议切换节点；2) 本地网络运营商限制（如高峰期 QoS）；3) 客户端选错了代理模式或路由规则；4) 使用的协议被深度检测干扰，可尝试更换协议。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">如何选择延迟最低的节点？</h4>
+            <div class="faq-answer">大多数客户端支持自动选择延迟最低节点的功能。您也可以手动对所有节点进行延迟测试（Ping/TCPing），选择响应时间最短的节点。通常日本、香港、新加坡节点对中国大陆的延迟最低。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 更新 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-sync"></i> 更新</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">客户端如何更新到最新版本？</h4>
+            <div class="faq-answer">PC端客户端通常会在有新版本时自动提示更新，您也可以前往官网下载页面手动下载最新版本覆盖安装。移动端可以在各应用商店中检查更新。我们建议始终保持客户端为最新版本。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">更新后订阅需要重新导入吗？</h4>
+            <div class="faq-answer">客户端更新不影响已保存的订阅配置，通常无需重新导入。但建议在更新后检查一下订阅是否需要手动刷新，以确保节点列表为最新状态。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DNS -->
+      <div class="faq-category">
+        <h3><i class="fas fa-network-wired"></i> DNS</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">如何配置 DNS 防止泄漏？</h4>
+            <div class="faq-answer">在客户端设置中，建议将 DNS 设置为加密 DNS（如 8.8.8.8、1.1.1.1 的 DoH/DoT 版本），并开启 DNS 防泄漏功能。避免使用运营商默认 DNS，以防 DNS 查询被劫持或泄露。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">DNS 解析异常怎么办？</h4>
+            <div class="faq-answer">如遇 DNS 解析异常，尝试：1) 更换 DNS 服务器为 8.8.8.8 或 1.1.1.1；2) 清除本地 DNS 缓存（ipconfig/flushdns）；3) 检查客户端 DNS 设置是否正确；4) 尝试关闭 IPv6 或调整优先级。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 连接失败 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-exclamation-circle"></i> 连接失败</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">提示连接失败/超时如何处理？</h4>
+            <div class="faq-answer">连接失败的常见解决方法：1) 确认订阅是否在有效期内；2) 尝试切换其他节点；3) 检查本地网络是否正常；4) 关闭防火墙/安全软件后重试；5) 更新客户端到最新版本；6) 更换代理协议或端口。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">某些网站或应用无法访问？</h4>
+            <div class="faq-answer">如部分网站无法访问，可能原因：1) 当前节点的 IP 被目标服务屏蔽，尝试切换节点；2) 客户端路由规则未正确配置，尝试改用全局模式；3) DNS 解析异常，检查 DNS 设置；4) 协议被深度包检测干扰，切换协议试试。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 导入失败 -->
+      <div class="faq-category">
+        <h3><i class="fas fa-file-import"></i> 导入失败</h3>
+        <div class="faq-items">
+          <div class="faq-item">
+            <h4 class="faq-question">导入订阅时提示格式错误？</h4>
+            <div class="faq-answer">格式错误通常由以下原因导致：1) 订阅链接已过期，请重新生成订阅链接；2) 复制时遗漏了部分字符，请完整复制整个链接；3) 客户端不支持订阅格式，尝试更换客户端；4) 订阅链接被截断，检查是否从完整邮件或页面中复制。</div>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-question">导入后节点列表为空？</h4>
+            <div class="faq-answer">导入后节点为空的原因：1) 订阅链接未正确更新，请在客户端手动点击「更新订阅」；2) 网络问题导致无法获取节点信息，检查网络连接后重试；3) 订阅已过期，请续费后重新导入；4) 客户端版本过旧不兼容，请更新客户端。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-not-found" style="display:none;">
+      <p>未找到相关问题。请尝试其他关键词，或<a href="/contact/">联系客服</a>获取帮助。</p>
+    </div>
+  </div>
+</section>

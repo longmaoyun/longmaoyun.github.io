@@ -1,0 +1,246 @@
+---
+layout: null
+permalink: /404.html
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - 页面未找到 | 龙猫云机场</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .glass-container {
+      text-align: center;
+      padding: 60px 80px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+      animation: shimmer 15s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(2%, 2%) rotate(3deg); }
+    }
+
+    .error-code {
+      font-size: 120px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .error-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-message {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 32px;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(102, 126, 234, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      animation: particle-float linear infinite;
+    }
+
+    @keyframes particle-float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    .mascot {
+      font-size: 64px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @media (max-width: 640px) {
+      .glass-container {
+        padding: 40px 24px;
+      }
+      .error-code {
+        font-size: 80px;
+      }
+      .error-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+  <div class="glass-container">
+    <div class="mascot">🐱</div>
+    <div class="error-code">404</div>
+    <h1 class="error-title">页面迷失在云海中</h1>
+    <p class="error-message">
+      您访问的页面似乎被龙猫藏起来了，或者它从未存在过。<br>
+      不如回到首页，重新开始您的探索之旅吧！
+    </p>
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">
+        <span>🏠</span> 返回首页
+      </a>
+      <a href="/tutorial/" class="btn btn-outline">
+        <span>📚</span> 浏览教程
+      </a>
+      <a href="/contact/" class="btn btn-outline">
+        <span>💬</span> 联系我们
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Generate floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      const size = Math.random() * 4 + 2;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+      particle.style.animationDelay = (Math.random() * 15) + 's';
+      particle.style.opacity = Math.random() * 0.3 + 0.1;
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>

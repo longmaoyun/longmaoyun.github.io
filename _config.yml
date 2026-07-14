@@ -1,0 +1,121 @@
+# =============================================================================
+# 龙猫云机场 (Longmao Cloud) - Jekyll Configuration
+# GitHub Pages via github-pages meta-gem
+# =============================================================================
+
+# ----- Site Settings -----
+title: 龙猫云机场
+email: support@longmaoyun.com
+description: >-
+  龙猫云机场 - 高速稳定的网络加速服务 | Longmao Cloud - Fast & Reliable VPN/Accelerator Service.
+  Enjoy secure, high-speed access to the global internet with our cutting-edge technology.
+baseurl: ""
+url: "https://longmaoyun.github.io"
+twitter_username: longmaoyun
+github_username: longmaoyun
+
+# ----- Build Settings -----
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# No custom theme — using github-pages meta-gem which includes minima/primer
+theme: null
+
+# ----- Plugins -----
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+# ----- Pagination -----
+paginate: 10
+paginate_path: "/page:num/"
+
+# ----- Collections -----
+collections:
+  wiki:
+    output: true
+    permalink: /wiki/:name/
+  faq:
+    output: true
+    permalink: /faq/:name/
+  pricing:
+    output: true
+    permalink: /pricing/:name/
+
+# ----- Defaults -----
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      permalink: /:basename/
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: wiki
+    values:
+      layout: wiki
+  - scope:
+      path: ""
+      type: faq
+    values:
+      layout: faq
+  - scope:
+      path: ""
+      type: pricing
+    values:
+      layout: page
+      permalink: /pricing/:name/
+
+# ----- Includes -----
+include:
+  - pages
+
+# ----- Excludes -----
+exclude:
+  - node_modules
+  - package.json
+  - tailwind.config.js
+  - postcss.config.js
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - prompts
+  - content
+  - README.md
+  - .gitignore
+  - package-lock.json
+  - yarn.lock
+
+# ----- SEO -----
+logo: /assets/img/logo.png
+social:
+  name: 龙猫云机场
+  links:
+    - https://twitter.com/longmaoyun
+    - https://github.com/longmaoyun
+    - https://t.me/longmaoyun
+
+# ----- Timezone -----
+timezone: Asia/Shanghai
+
+# ----- Permalinks -----
+permalink: /blog/:year/:month/:day/:title/
+
+# ----- Feed -----
+feed:
+  path: /feed.xml
+
+# ----- Sitemap -----
+sitemap:
+  lastmod: true

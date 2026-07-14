@@ -1,0 +1,136 @@
+---
+layout: page
+title: "全球节点 - 龙猫云机场"
+description: "龙猫云机场覆盖全球 60+ 国家地区的优质节点，包括亚洲、美洲、欧洲、大洋洲等主流区域，全部采用高速专线连接。"
+permalink: /nodes/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>全球节点</h1>
+    <p class="page-subtitle">覆盖全球 · 高速稳定 · 低延迟</p>
+  </div>
+</div>
+
+<section class="nodes-section">
+  <div class="container">
+    <div class="nodes-intro">
+      <p>龙猫云机场精心部署了遍布全球 <strong>60+ 个国家地区</strong>、<strong>200+ 个优质节点</strong>。所有节点均采用 <strong>CN2 GIA / IEC / IPLC 专线</strong>，确保中国大陆访问速度极快、延迟极低、丢包率小于 0.5%。我们与全球顶级云服务商（AWS、Google Cloud、Azure、SoftBank、Linode、Vultr 等）深度合作，为企业级用户提供稳定可靠的高速网络连接。</p>
+    </div>
+
+    <div class="node-filters">
+      <button class="filter-btn active" data-filter="all">全部节点</button>
+      <button class="filter-btn" data-filter="asia">亚洲</button>
+      <button class="filter-btn" data-filter="america">美洲</button>
+      <button class="filter-btn" data-filter="europe">欧洲</button>
+      <button class="filter-btn" data-filter="oceania">大洋洲</button>
+      <button class="filter-btn" data-filter="special">专线</button>
+    </div>
+
+    <div class="nodes-grid">
+      {% assign nodes = site.data.nodes %}
+      {% for node in nodes %}
+      <div class="node-card" data-region="{{ node.region }}" data-featured="{{ node.featured }}">
+        <div class="node-card-header">
+          <span class="node-status {{ node.status }}"></span>
+          <h3 class="node-name">{{ node.name }}</h3>
+          {% if node.featured %}
+          <span class="node-badge">推荐</span>
+          {% endif %}
+        </div>
+        <div class="node-card-body">
+          <div class="node-info">
+            <div class="node-info-item">
+              <span class="label">地区</span>
+              <span class="value">{{ node.location }}</span>
+            </div>
+            <div class="node-info-item">
+              <span class="label">线路</span>
+              <span class="value">{{ node.line }}</span>
+            </div>
+            <div class="node-info-item">
+              <span class="label">延迟</span>
+              <span class="value ping">{{ node.latency }}</span>
+            </div>
+            <div class="node-info-item">
+              <span class="label">负载</span>
+              <span class="value load">{{ node.load }}</span>
+            </div>
+            <div class="node-info-item">
+              <span class="label">带宽</span>
+              <span class="value">{{ node.bandwidth }}</span>
+            </div>
+            <div class="node-info-item">
+              <span class="label">协议</span>
+              <span class="value">{{ node.protocol }}</span>
+            </div>
+          </div>
+          <div class="node-tags">
+            {% for tag in node.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="node-card-footer">
+          <a href="#" class="btn btn-sm btn-outline test-latency" data-node="{{ node.id }}">测速</a>
+          <a href="#" class="btn btn-sm btn-primary copy-link" data-node="{{ node.id }}">复制订阅</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="node-regions-detail">
+      <h2>区域详情</h2>
+
+      <div class="region-block" id="asia">
+        <h3><i class="fas fa-globe-asia"></i> 亚洲节点</h3>
+        <p>亚洲节点覆盖 <strong>日本、韩国、新加坡、香港、台湾、马来西亚、印度、泰国、越南、菲律宾、印度尼西亚</strong> 等国家地区。其中日本和香港节点采用 <strong>SoftBank / NTT / BBIX</strong> 多线接入，CN2 GIA 直连中国大陆，延迟低至 30-50ms，是游戏和视频流媒体的最佳选择。新加坡节点面向东南亚地区优化，适合跨境电商和海外业务。</p>
+        <div class="region-stats">
+          <div class="stat"><strong>节点数量：</strong>50+</div>
+          <div class="stat"><strong>平均延迟：</strong>40-80ms</div>
+          <div class="stat"><strong>推荐用途：</strong>游戏、流媒体、日常浏览</div>
+        </div>
+      </div>
+
+      <div class="region-block" id="america">
+        <h3><i class="fas fa-globe-americas"></i> 美洲节点</h3>
+        <p>美洲节点覆盖 <strong>美国（洛杉矶、圣何塞、西雅图、纽约、迈阿密、达拉斯）、加拿大、巴西、墨西哥、阿根廷</strong> 等国家地区。美国西海岸节点（洛杉矶、圣何塞）直连中国电信 CN2 GIA 线路，是中国大陆用户访问美国网站的最优路径，延迟约 130-160ms，适合访问 Google、YouTube、ChatGPT 等美国服务。东海岸节点（纽约）和加拿大节点面向北美东部用户优化。</p>
+        <div class="region-stats">
+          <div class="stat"><strong>节点数量：</strong>60+</div>
+          <div class="stat"><strong>平均延迟：</strong>130-200ms</div>
+          <div class="stat"><strong>推荐用途：</strong>AI 工具、谷歌服务、流媒体</div>
+        </div>
+      </div>
+
+      <div class="region-block" id="europe">
+        <h3><i class="fas fa-globe-europe"></i> 欧洲节点</h3>
+        <p>欧洲节点覆盖 <strong>英国（伦敦）、德国（法兰克福）、法国（巴黎）、荷兰（阿姆斯特丹）、俄罗斯（莫斯科）、芬兰、瑞典、挪威、意大利（米兰）、西班牙（马德里）、瑞士（苏黎世）</strong> 等国家地区。德国法兰克福和荷兰阿姆斯特丹是欧洲网络交换核心，拥有极其丰富的带宽资源和优秀的国际互联质量。欧洲节点普遍接入 CN2 和联通 9929 线路，中国大陆访问延迟约 180-240ms。</p>
+        <div class="region-stats">
+          <div class="stat"><strong>节点数量：</strong>50+</div>
+          <div class="stat"><strong>平均延迟：</strong>180-250ms</div>
+          <div class="stat"><strong>推荐用途：</strong>欧洲业务、学术资源、流媒体</div>
+        </div>
+      </div>
+
+      <div class="region-block" id="oceania">
+        <h3><i class="fas fa-globe"></i> 大洋洲节点</h3>
+        <p>大洋洲节点覆盖 <strong>澳大利亚（悉尼、墨尔本）、新西兰（奥克兰）</strong>。悉尼节点采用 CN2 线路直连，中国大陆访问延迟约 170-200ms，适合澳大利亚留学、移民用户以及跨境电商业务。新西兰节点面向南太平洋地区优化。</p>
+        <div class="region-stats">
+          <div class="stat"><strong>节点数量：</strong>10+</div>
+          <div class="stat"><strong>平均延迟：</strong>170-220ms</div>
+          <div class="stat"><strong>推荐用途：</strong>留学、移民、跨境电商</div>
+        </div>
+      </div>
+
+      <div class="region-block" id="special">
+        <h3><i class="fas fa-star"></i> 专线节点</h3>
+        <p>专线节点是龙猫云机场的旗舰产品，采用 <strong>IPLC（国际私用租赁线路）和 IEPL（国际以太网专线）</strong> 纯物理层隔离通道，不经过任何公网路由节点，不受国际网络拥堵影响，高峰期依然保持极低延迟和零丢包。专线节点带宽独享，不限速、不限流，提供 <strong>SLA 99.9%</strong> 可用性保障，是最高品质的网络加速选择。专线覆盖日本、香港、新加坡、美国、德国等核心地区。</p>
+        <div class="region-stats">
+          <div class="stat"><strong>节点数量：</strong>30+</div>
+          <div class="stat"><strong>平均延迟：</strong>30-100ms</div>
+          <div class="stat"><strong>SLA：</strong>99.9% 可用性</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

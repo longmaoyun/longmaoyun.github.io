@@ -1,0 +1,34 @@
+# robots.txt for 龙猫云机场
+# https://www.longmaoyun.com
+
+User-agent: *
+Allow: /
+Allow: /pages/
+Allow: /blog/
+Allow: /wiki/
+Allow: /tutorial/
+Allow: /faq/
+Allow: /download/
+Allow: /pricing/
+Allow: /nodes/
+Allow: /about/
+Allow: /contact/
+
+Disallow: /assets/
+Disallow: /_layouts/
+Disallow: /_includes/
+Disallow: /_data/
+Disallow: /_plugins/
+Disallow: /_pricing/
+Disallow: /_faq/
+Disallow: /scripts/
+Disallow: /prompts/
+
+# Sitemap
+Sitemap: https://www.longmaoyun.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Host
+Host: https://www.longmaoyun.com

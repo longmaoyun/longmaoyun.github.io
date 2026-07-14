@@ -1,0 +1,80 @@
+<!-- Organization Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.title | escape }}",
+  "url": "{{ site.url | absolute_url }}",
+  {% if site.logo %}
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.logo | absolute_url }}"
+  },
+  {% endif %}
+  "description": "{{ site.description | escape }}",
+  "foundingDate": "{{ site.founding_date | default: '2024' }}",
+  "contactPoint": [
+    {% if site.email %}
+    {
+      "@type": "ContactPoint",
+      "telephone": "{{ site.phone | default: '+86-400-000-0000' }}",
+      "contactType": "customer service",
+      "email": "{{ site.email }}",
+      "availableLanguage": ["Chinese", "English"]
+    },
+    {% endif %}
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "url": "{{ '/pricing' | absolute_url }}",
+      "availableLanguage": ["Chinese"]
+    }
+  ],
+  "sameAs": [
+    {% if site.social.twitter %}"{{ site.social.twitter }}"{% if site.social.telegram or site.social.github or site.social.email %},{% endif %}{% endif %}
+    {% if site.social.telegram %}"{{ site.social.telegram }}"{% if site.social.github or site.social.email %},{% endif %}{% endif %}
+    {% if site.social.github %}"{{ site.social.github }}"{% if site.social.email %},{% endif %}{% endif %}
+    {% if site.social.email %}"mailto:{{ site.email }}"{% endif %}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "{{ site.address_country | default: 'CN' }}"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "China"
+    },
+    {
+      "@type": "Country",
+      "name": "Global"
+    }
+  ],
+  "knowsAbout": [
+    "Network acceleration",
+    "VPN services",
+    "Internet privacy",
+    "Cybersecurity"
+  ]
+}
+</script>
+
+<!-- WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title | escape }}",
+  "url": "{{ site.url | absolute_url }}",
+  "description": "{{ site.description | escape }}",
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ '/search?q=' | absolute_url }}{search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

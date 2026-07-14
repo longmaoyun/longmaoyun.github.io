@@ -1,0 +1,102 @@
+main:
+  - title: "首页"
+    url: "/"
+    icon: "fas fa-home"
+
+  - title: "下载"
+    url: "/download/"
+    icon: "fas fa-download"
+    submenu:
+      - title: "Windows"
+        url: "/download/#windows"
+      - title: "macOS"
+        url: "/download/#macos"
+      - title: "Android"
+        url: "/download/#android"
+      - title: "iOS"
+        url: "/download/#ios"
+      - title: "Linux"
+        url: "/download/#linux"
+      - title: "路由器"
+        url: "/download/#router"
+
+  - title: "套餐"
+    url: "/pricing/"
+    icon: "fas fa-tags"
+
+  - title: "节点"
+    url: "/nodes/"
+    icon: "fas fa-server"
+
+  - title: "教程"
+    url: "/tutorial/"
+    icon: "fas fa-book"
+
+  - title: "Wiki"
+    url: "/wiki/"
+    icon: "fas fa-graduation-cap"
+
+  - title: "FAQ"
+    url: "/faq/"
+    icon: "fas fa-question-circle"
+
+  - title: "博客"
+    url: "/blog/"
+    icon: "fas fa-newspaper"
+
+  - title: "公告"
+    url: "/announcement/"
+    icon: "fas fa-bullhorn"
+
+  - title: "关于"
+    url: "/about/"
+    icon: "fas fa-info-circle"
+
+  - title: "联系"
+    url: "/contact/"
+    icon: "fas fa-envelope"
+
+footer:
+  - title: "产品"
+    links:
+      - title: "套餐定价"
+        url: "/pricing/"
+      - title: "全球节点"
+        url: "/nodes/"
+      - title: "客户端下载"
+        url: "/download/"
+      - title: "产品更新"
+        url: "/blog/"
+
+  - title: "帮助"
+    links:
+      - title: "教程中心"
+        url: "/tutorial/"
+      - title: "常见问题"
+        url: "/faq/"
+      - title: "Wiki 知识库"
+        url: "/wiki/"
+      - title: "联系我们"
+        url: "/contact/"
+
+  - title: "关于"
+    links:
+      - title: "品牌故事"
+        url: "/about/"
+      - title: "官方公告"
+        url: "/announcement/"
+      - title: "博客"
+        url: "/blog/"
+      - title: "加入我们"
+        url: "/contact/"
+
+  - title: "法律"
+    links:
+      - title: "服务条款"
+        url: "/terms/"
+      - title: "隐私政策"
+        url: "/privacy/"
+      - title: "退款政策"
+        url: "/refund/"
+      - title: "免责声明"
+        url: "/disclaimer/"

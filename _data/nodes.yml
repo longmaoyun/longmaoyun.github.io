@@ -1,0 +1,139 @@
+- id: "jp-tokyo-1"
+  name: "日本东京 01"
+  region: "asia"
+  location: "东京, 日本"
+  flag: "🇯🇵"
+  line: "SoftBank + CN2 GIA"
+  latency: "35ms"
+  load: "30%"
+  bandwidth: "500Mbps"
+  protocol: "Shadowsocks / V2Ray / Trojan"
+  status: "online"
+  featured: true
+  tags: [流媒体, 游戏, 低延迟]
+
+- id: "jp-tokyo-2"
+  name: "日本东京 02"
+  region: "asia"
+  location: "东京, 日本"
+  flag: "🇯🇵"
+  line: "NTT + CN2 GIA"
+  latency: "38ms"
+  load: "45%"
+  bandwidth: "300Mbps"
+  protocol: "V2Ray / Trojan"
+  status: "online"
+  featured: false
+  tags: [流媒体, 视频]
+
+- id: "hk-central-1"
+  name: "香港 Central 01"
+  region: "asia"
+  location: "香港"
+  flag: "🇭🇰"
+  line: "CN2 GIA + HKIX"
+  latency: "30ms"
+  load: "50%"
+  bandwidth: "500Mbps"
+  protocol: "Shadowsocks / V2Ray / Trojan / Hysteria2"
+  status: "online"
+  featured: true
+  tags: [低延迟, 流媒体, ChatGPT]
+
+- id: "sg-sin-1"
+  name: "新加坡 01"
+  region: "asia"
+  location: "新加坡"
+  flag: "🇸🇬"
+  line: "SingTel + CN2"
+  latency: "55ms"
+  load: "40%"
+  bandwidth: "300Mbps"
+  protocol: "V2Ray / Trojan"
+  status: "online"
+  featured: false
+  tags: [东南亚, 流媒体]
+
+- id: "kr-seoul-1"
+  name: "韩国首尔 01"
+  region: "asia"
+  location: "首尔, 韩国"
+  flag: "🇰🇷"
+  line: "KT + CN2"
+  latency: "50ms"
+  load: "35%"
+  bandwidth: "300Mbps"
+  protocol: "Shadowsocks / V2Ray"
+  status: "online"
+  featured: false
+  tags: [游戏, 低延迟]
+
+- id: "us-la-1"
+  name: "美国洛杉矶 01"
+  region: "america"
+  location: "洛杉矶, 美国"
+  flag: "🇺🇸"
+  line: "CN2 GIA"
+  latency: "140ms"
+  load: "55%"
+  bandwidth: "1000Mbps"
+  protocol: "Shadowsocks / V2Ray / Trojan / Hysteria2"
+  status: "online"
+  featured: true
+  tags: [ChatGPT, AI, 流媒体, 4K]
+
+- id: "us-sj-1"
+  name: "美国圣何塞 01"
+  region: "america"
+  location: "圣何塞, 美国"
+  flag: "🇺🇸"
+  line: "CN2 GIA"
+  latency: "145ms"
+  load: "50%"
+  bandwidth: "500Mbps"
+  protocol: "V2Ray / Trojan"
+  status: "online"
+  featured: false
+  tags: [AI, 谷歌服务]
+
+- id: "us-ny-1"
+  name: "美国纽约 01"
+  region: "america"
+  location: "纽约, 美国"
+  flag: "🇺🇸"
+  line: "Cogent + CN2"
+  latency: "190ms"
+  load: "40%"
+  bandwidth: "300Mbps"
+  protocol: "Shadowsocks / V2Ray"
+  status: "online"
+  featured: false
+  tags: [美东, 流媒体]
+
+- id: "uk-lon-1"
+  name: "英国伦敦 01"
+  region: "europe"
+  location: "伦敦, 英国"
+  flag: "🇬🇧"
+  line: "联通 9929 + CN2"
+  latency: "180ms"
+  load: "35%"
+  bandwidth: "300Mbps"
+  protocol: "V2Ray / Trojan"
+  status: "online"
+  featured: false
+  tags: [欧洲, 流媒体]
+
+- id: "de-fra-1"
+  name: "德国法兰克福 01"
+  region: "europe"
+  location: "法兰克福, 德国"
+  flag: "🇩🇪"
+  line: "CN2 + 9929"
+  latency: "195ms"
+  load: "30%"
+  bandwidth: "300Mbps"
+  protocol: "Shadowsocks / V2Ray"
+  status: "online"
+  featured: false
+  tags: [欧洲, 学术]

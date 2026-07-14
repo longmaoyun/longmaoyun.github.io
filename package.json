@@ -1,0 +1,20 @@
+{
+  "name": "longmaoyun",
+  "version": "1.0.0",
+  "description": "龙猫云机场 - Jekyll site with Tailwind CSS",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --minify",
+    "dev:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4",
+    "postcss": "^8",
+    "autoprefixer": "^10"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

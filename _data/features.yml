@@ -1,0 +1,15 @@
+- title: "高速稳定"
+  icon: "fas fa-bolt"
+  description: "采用 CN2 GIA / IPLC / IEPL 优质专线，全球 200+ 节点，平均延迟低于 100ms，高峰期依然保持流畅体验。所有节点 7×24 小时实时监控，确保 99.9% 的高可用性。"
+
+- title: "安全加密"
+  icon: "fas fa-shield-alt"
+  description: "全节点采用 AES-256 及 TLS 1.3 加密传输，严格无日志政策，保护您的每一比特数据。支持 Shadowsocks / V2Ray / Trojan / Hysteria2 多种安全协议。"
+
+- title: "全平台支持"
+  icon: "fas fa-mobile-alt"
+  description: "支持 Windows、macOS、Android、iOS、Linux 及路由器全平台。提供 v2rayN、Clash Verge、Shadowrocket 等 20+ 主流客户端的详细配置教程。"
+
+- title: "智能分流"
+  icon: "fas fa-route"
+  description: "AI 智能节点推荐系统自动选择最优节点。智能路由规则自动识别国内外流量，国内网站直连不减速，海外访问快速稳定，完美兼顾速度与体验。"

@@ -1,0 +1,56 @@
+<!-- Related Posts -->
+{% if page.related != false %}
+  {% assign max_related = 3 %}
+  {% assign related_count = 0 %}
+  {% assign related_posts = '' | split: '' %}
+
+  <!-- Collect by tags -->
+  {% if page.tags %}
+    {% for tag in page.tags %}
+      {% assign tag_posts = site.tags[tag] | where_exp: 'p', 'p.url != page.url' %}
+      {% for post in tag_posts limit: max_related %}
+        {% unless related_posts contains post %}
+          {% assign related_posts = related_posts | push: post %}
+          {% assign related_count = related_count | plus: 1 %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+
+  <!-- Fallback: collect by category -->
+  {% if related_count == 0 and page.categories %}
+    {% for category in page.categories %}
+      {% assign cat_posts = site.categories[category] | where_exp: 'p', 'p.url != page.url' %}
+      {% for post in cat_posts limit: max_related %}
+        {% unless related_posts contains post %}
+          {% assign related_posts = related_posts | push: post %}
+          {% assign related_count = related_count | plus: 1 %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+
+  {% if related_posts.size > 0 %}
+  <section class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">相关文章</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for post in related_posts limit: max_related %}
+      <a href="{{ post.url | relative_url }}" class="group p-4 rounded-xl bg-gray-50 dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-all hover:shadow-md">
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+          {{ post.title }}
+        </h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 line-clamp-1">
+          {{ post.excerpt | strip_html | truncate: 80 }}
+        </p>
+        <div class="flex items-center gap-2 mt-3 text-xs text-gray-400 dark:text-gray-500">
+          <span><i class="far fa-calendar-alt mr-1"></i>{{ post.date | date: "%Y-%m-%d" }}</span>
+          {% if post.tags %}
+          <span><i class="fas fa-tag mr-1"></i>{{ post.tags | first }}</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+{% endif %}

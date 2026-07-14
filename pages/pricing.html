@@ -1,0 +1,162 @@
+---
+layout: page
+title: "套餐定价 - 龙猫云机场"
+description: "龙猫云机场提供多种灵活套餐，按月、季、年付费，满足不同用户需求。所有套餐均包含全球优质节点、不限速、不限设备数。"
+permalink: /pricing/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>套餐定价</h1>
+    <p class="page-subtitle">灵活选择 · 按需付费 · 性价比之选</p>
+  </div>
+</div>
+
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-toggle">
+      <span class="toggle-label">月付</span>
+      <label class="switch">
+        <input type="checkbox" id="pricing-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-label">年付 <span class="badge">省 25%</span></span>
+    </div>
+
+    <div class="pricing-grid" id="pricing-grid">
+      {% assign plans = site.pricing | sort: 'sort_order' %}
+      {% for plan in plans %}
+      <div class="pricing-card {% if plan.featured %}featured{% endif %}">
+        {% if plan.featured %}
+        <div class="pricing-badge">推荐</div>
+        {% endif %}
+        <div class="pricing-card-header">
+          <h3 class="plan-name">{{ plan.name }}</h3>
+          <p class="plan-description">{{ plan.description }}</p>
+        </div>
+        <div class="pricing-card-body">
+          <div class="price-wrapper">
+            <span class="currency">¥</span>
+            <span class="price monthly-price">{{ plan.monthly_price }}</span>
+            <span class="price yearly-price" style="display:none;">{{ plan.yearly_price }}</span>
+            <span class="period monthly-period">/月</span>
+            <span class="period yearly-period" style="display:none;">/年</span>
+          </div>
+          {% if plan.yearly_monthly_equivalent %}
+          <div class="yearly-saving" style="display:none;">折合 ¥{{ plan.yearly_monthly_equivalent }}/月</div>
+          {% endif %}
+          <ul class="plan-features">
+            {% for feature in plan.features %}
+            <li><i class="fas fa-check-circle"></i> {{ feature }}</li>
+            {% endfor %}
+          </ul>
+          {% if plan.limited_features %}
+          <ul class="plan-features limited">
+            {% for feature in plan.limited_features %}
+            <li><i class="fas fa-times-circle"></i> {{ feature }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        <div class="pricing-card-footer">
+          <a href="#" class="btn btn-primary btn-lg btn-block">立即订阅</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="pricing-compare">
+      <h2>套餐对比</h2>
+      <div class="table-responsive">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>功能</th>
+              <th>基础版</th>
+              <th>标准版</th>
+              <th>专业版</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>节点数量</td>
+              <td>20+ 节点</td>
+              <td>40+ 节点</td>
+              <td>60+ 节点</td>
+            </tr>
+            <tr>
+              <td>带宽速率</td>
+              <td>100Mbps</td>
+              <td>300Mbps</td>
+              <td>1000Mbps</td>
+            </tr>
+            <tr>
+              <td>同时在线设备</td>
+              <td>3 台</td>
+              <td>5 台</td>
+              <td>10 台</td>
+            </tr>
+            <tr>
+              <td>流媒体解锁</td>
+              <td>部分支持</td>
+              <td>全面支持</td>
+              <td>全面支持 + 4K</td>
+            </tr>
+            <tr>
+              <td>ChatGPT 访问</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>游戏加速</td>
+              <td>—</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>专属客服</td>
+              <td>工单支持</td>
+              <td>优先工单</td>
+              <td>24/7 专属客服</td>
+            </tr>
+            <tr>
+              <td>IP 更换</td>
+              <td>每月 1 次</td>
+              <td>每月 3 次</td>
+              <td>无限次</td>
+            </tr>
+            <tr>
+              <td>退款保证</td>
+              <td>7 天</td>
+              <td>15 天</td>
+              <td>30 天</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pricing-faq">
+      <h2>定价常见问题</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>套餐可以随时升级或降级吗？</h4>
+          <p>可以的。您可以随时在用户中心自主升级或降级套餐，差价按剩余天数折算，升级只需补足差价，降级将返还剩余金额至账户余额。</p>
+        </div>
+        <div class="faq-item">
+          <h4>年付套餐有优惠吗？</h4>
+          <p>是的，年付套餐享受约 25% 的优惠，相当于免费使用 3 个月。年付用户还享有优先客服支持和专属节点等额外权益。</p>
+        </div>
+        <div class="faq-item">
+          <h4>退款政策是怎样的？</h4>
+          <p>我们提供无理由退款保障。基础版 7 天内、标准版 15 天内、专业版 30 天内可申请全额退款，超过期限按剩余天数比例退款。</p>
+        </div>
+        <div class="faq-item">
+          <h4>支持哪些支付方式？</h4>
+          <p>我们支持支付宝、微信支付、USDT（加密货币）和银联卡支付。所有支付方式均安全快捷，支付成功后自动开通服务。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

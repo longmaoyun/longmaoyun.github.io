@@ -1,0 +1,97 @@
+<!-- Tutorial Preview Section -->
+<section class="relative py-20 lg:py-28 overflow-hidden bg-gray-50 dark:bg-[#0d1f3c]/30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 mb-4">
+        <i class="fas fa-graduation-cap mr-1.5"></i>使用教程
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4" data-aos="fade-up">
+        {{ site.tutorials_title | default: '快速上手' }}
+      </h2>
+      <p class="text-lg text-gray-500 dark:text-gray-400" data-aos="fade-up" data-aos-delay="100">
+        {{ site.tutorials_description | default: '详细的图文教程，帮助您快速上手' }}
+      </p>
+    </div>
+
+    <!-- Tutorial Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {% assign tutorials = site.tutorials | default: site.data.tutorials %}
+      {% if tutorials %}
+        {% for tutorial in tutorials limit: 6 %}
+        <a href="{{ tutorial.url | relative_url }}" class="group block p-6 rounded-2xl bg-white dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700/50 shadow-sm hover:shadow-xl hover:border-yellow-500/50 dark:hover:border-yellow-400/50 transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 50 }}">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white text-sm">
+              <i class="{% if tutorial.icon %}{{ tutorial.icon }}{% else %}fas fa-play{% endif %}"></i>
+            </div>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300">
+              {{ tutorial.platform | default: '通用' }}
+            </span>
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors mb-2">
+            {{ tutorial.title | default: 'Tutorial' }}
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+            {{ tutorial.description | default: 'Step by step guide' }}
+          </p>
+          <div class="mt-4 flex items-center text-xs text-gray-400 dark:text-gray-500">
+            <i class="far fa-clock mr-1"></i>
+            {{ tutorial.duration | default: '5 min' }}
+          </div>
+        </a>
+        {% endfor %}
+      {% else %}
+        <!-- Default tutorials -->
+        <a href="{{ '/wiki/windows-setup' | relative_url }}" class="group block p-6 rounded-2xl bg-white dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700/50 shadow-sm hover:shadow-xl hover:border-yellow-500/50 dark:hover:border-yellow-400/50 transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white text-sm">
+              <i class="fab fa-windows"></i>
+            </div>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300">Windows</span>
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors mb-2">Windows 客户端安装教程</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">详细讲解如何在 Windows 系统上安装和配置客户端。</p>
+          <div class="mt-4 flex items-center text-xs text-gray-400 dark:text-gray-500">
+            <i class="far fa-clock mr-1"></i>5 分钟
+          </div>
+        </a>
+
+        <a href="{{ '/wiki/macos-setup' | relative_url }}" class="group block p-6 rounded-2xl bg-white dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700/50 shadow-sm hover:shadow-xl hover:border-yellow-500/50 dark:hover:border-yellow-400/50 transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="50">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white text-sm">
+              <i class="fab fa-apple"></i>
+            </div>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300">macOS</span>
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors mb-2">macOS 客户端安装教程</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">详细讲解如何在 macOS 系统上安装和配置客户端。</p>
+          <div class="mt-4 flex items-center text-xs text-gray-400 dark:text-gray-500">
+            <i class="far fa-clock mr-1"></i>5 分钟
+          </div>
+        </a>
+
+        <a href="{{ '/wiki/android-setup' | relative_url }}" class="group block p-6 rounded-2xl bg-white dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700/50 shadow-sm hover:shadow-xl hover:border-yellow-500/50 dark:hover:border-yellow-400/50 transition-all duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white text-sm">
+              <i class="fab fa-android"></i>
+            </div>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300">Android</span>
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors mb-2">Android 客户端安装教程</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">详细讲解如何在 Android 设备上安装和配置客户端。</p>
+          <div class="mt-4 flex items-center text-xs text-gray-400 dark:text-gray-500">
+            <i class="far fa-clock mr-1"></i>3 分钟
+          </div>
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- View All Link -->
+    <div class="text-center mt-10" data-aos="fade-up">
+      <a href="{{ '/wiki' | relative_url }}" class="inline-flex items-center gap-2 text-sm font-medium text-yellow-600 dark:text-yellow-400 hover:text-yellow-700 dark:hover:text-yellow-300 transition-colors">
+        查看全部教程
+        <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+  </div>
+</section>
