@@ -1,7 +1,7 @@
 {
   "name": "longmaoyun",
   "version": "1.0.0",
-  "description": "龙猫云机场 - Jekyll site with Tailwind CSS",
+  "description": "\u9f99\u732b\u4e91\u673a\u573a - Jekyll site with Tailwind CSS",
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --minify",
@@ -10,7 +10,8 @@
   "dependencies": {
     "tailwindcss": "^3.4",
     "postcss": "^8",
-    "autoprefixer": "^10"
+    "autoprefixer": "^10",
+    "@tailwindcss/typography": "^0.5"
   },
   "browserslist": [
     "last 2 versions",
