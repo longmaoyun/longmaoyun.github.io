@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches), mobileMenuOpen: false }" x-init="$watch('darkMode', val => { localStorage.setItem('darkMode', val); document.documentElement.classList.toggle('dark', val); }); document.documentElement.classList.toggle('dark', darkMode);">
+<html lang="zh-CN" x-data="{ darkMode: localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches), mobileMenuOpen: false }" x-init="$watch('darkMode', val => { document.documentElement.classList.toggle('dark', val); localStorage.setItem('theme', val ? 'dark' : 'light') })" :class="{ 'dark': darkMode }">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,6 @@
   <!-- Font Awesome 6 (Free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
@@ -28,14 +25,9 @@
     <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
     {% endfor %}
   {% endif %}
-
-  {% if page.custom_head %}
-    {{ page.custom_head }}
-  {% endif %}
 </head>
-<body class="bg-white dark:bg-[#0a1628] text-gray-900 dark:text-gray-100 font-sans antialiased">
+<body class="bg-white dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 font-sans antialiased">
 
-  {% include announcement-bar.html %}
   {% include header.html %}
 
   <main>
@@ -43,44 +35,20 @@
   </main>
 
   {% include footer.html %}
-  {% include cookie-consent.html %}
 
   <!-- Alpine.js Core -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" crossorigin="anonymous"></script>
 
-  <!-- AOS.js -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous"></script>
+  <!-- Alpine.js Collapse -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.13.3/dist/cdn.min.js" crossorigin="anonymous"></script>
 
-  <!-- GSAP -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-
-  <!-- Main JavaScript -->
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <!-- Main JS -->
+  <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
   {% if page.custom_js %}
     {% for script in page.custom_js %}
     <script src="{{ script | relative_url }}"></script>
     {% endfor %}
   {% endif %}
-
-  <script>
-    // Initialize AOS
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-cubic'
-      });
-    });
-
-    // GSAP ScrollTrigger registration
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-      }
-    });
-  </script>
 </body>
 </html>

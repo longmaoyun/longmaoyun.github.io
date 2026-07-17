@@ -1,34 +1,15 @@
 <!-- CTA Section -->
-<section class="relative py-16 lg:py-20 overflow-hidden rounded-2xl mx-4 sm:mx-6 lg:mx-8 my-12 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 dark:from-blue-900 dark:via-purple-900 dark:to-indigo-950">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/10 rounded-full blur-3xl"></div>
-    <div class="absolute inset-0 opacity-10" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
-  </div>
-
-  <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4" data-aos="fade-up">
-        {{ site.cta_title | default: '准备好体验龙猫云极速网络了吗？' }}
-      </h2>
-      <p class="text-lg text-white/70 mb-8" data-aos="fade-up" data-aos-delay="100">
-        {{ site.cta_description | default: '立即加入龙猫云，畅享全球高速网络。新用户享 3 天免费试用。' }}
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-        <a href="{{ site.cta_url | default: '/pricing' | relative_url }}" class="group inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-blue-900 dark:text-white bg-white hover:bg-blue-50 dark:hover:bg-gray-100 shadow-2xl shadow-black/20 transition-all duration-300 hover:scale-105">
-          立即开始
-          <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-        </a>
-        <a href="{{ '/contact' | relative_url }}" class="group inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-          <i class="fas fa-headset mr-2"></i>
-          联系客服
-        </a>
-      </div>
-      <p class="mt-6 text-sm text-white/50" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-shield-alt mr-1"></i>
-        无需信用卡 · 3 天免费试用 · 随时取消
-      </p>
+<section class="py-20 bg-gradient-to-r from-primary-600 to-accent-600">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">准备好体验龙猫云极速网络了吗？</h2>
+    <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto">新用户注册即享免费试用，无需信用卡，立即体验全球畅连</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{{ '/pricing/' | relative_url }}" class="inline-flex items-center px-8 py-3 rounded-lg bg-white text-primary-700 hover:bg-gray-100 font-semibold text-lg shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+        立即开始 <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+      <a href="{{ '/contact/' | relative_url }}" class="inline-flex items-center px-8 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-lg backdrop-blur-sm border border-white/30 transition-all duration-300">
+        <i class="fas fa-headset mr-2"></i> 联系客服
+      </a>
     </div>
   </div>
 </section>

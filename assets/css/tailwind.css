@@ -1,9 +1,7 @@
 /* =========================================================================
-   龙猫云机场 (Longmao Cloud) - Tailwind CSS Source
-   Apple + Cloudflare inspired glassmorphism design system
+   龙猫云 - Tailwind CSS Source
    ========================================================================= */
 
-/* ----- Tailwind Directives ----- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,42 +18,38 @@
   }
 
   body {
-    @apply bg-surface-50 text-surface-900 dark:bg-surface-950 dark:text-surface-100;
-    font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    @apply bg-white dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 font-sans antialiased;
+    overflow-x: hidden;
   }
 
   ::selection {
-    background-color: rgba(59, 130, 246, 0.3);
-    color: #1e3a8a;
-  }
-  .dark ::selection {
-    background-color: rgba(59, 130, 246, 0.3);
-    color: #dbeafe;
+    background-color: rgba(99, 102, 241, 0.3);
+    @apply text-white;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-
   ::-webkit-scrollbar-track {
-    background: transparent;
+    @apply bg-gray-100 dark:bg-[#0f172a];
   }
-
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 9999px;
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
   }
-  .dark ::-webkit-scrollbar-thumb {
-    background: #334155;
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+  }
+  .dark * {
+    scrollbar-color: #475569 #0f172a;
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-  }
-  .dark ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500/50 ring-offset-2 ring-offset-white dark:ring-offset-[#0f172a];
   }
 }
 
@@ -64,235 +58,80 @@
    ========================================================================= */
 
 @layer components {
-  /* ----- Glassmorphism Cards ----- */
-  .glass-card {
-    @apply backdrop-blur-md bg-glass-light dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark rounded-glass shadow-glass;
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white
+           bg-gradient-to-r from-primary-600 to-primary-500
+           hover:from-primary-700 hover:to-primary-600
+           shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40
+           transition-all duration-300 hover:-translate-y-0.5;
   }
 
-  .glass-card-sm {
-    @apply backdrop-blur-sm bg-glass-light dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark rounded-glass-sm shadow-glass-sm;
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold
+           text-gray-700 dark:text-gray-300
+           bg-gray-100 dark:bg-white/5
+           border border-gray-200 dark:border-white/10
+           hover:bg-gray-200 dark:hover:bg-white/10
+           transition-all duration-300;
   }
 
-  .glass-card-lg {
-    @apply backdrop-blur-lg bg-glass-heavy dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark rounded-glass-lg shadow-glass-lg;
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white
+           bg-gradient-to-r from-accent-600 to-accent-500
+           hover:from-accent-700 hover:to-accent-600
+           shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40
+           transition-all duration-300 hover:-translate-y-0.5;
   }
 
-  .glass-card-hover {
-    @apply glass-card transition-all duration-300 ease-out;
+  .card {
+    @apply bg-white dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700/50
+           shadow-sm hover:shadow-md transition-all duration-300;
   }
 
-  .glass-card-hover:hover {
-    box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.45);
-    transform: translateY(-0.25rem);
-    background: rgba(255, 255, 255, 0.25);
-  }
-  .dark .glass-card-hover:hover {
-    background: rgba(0, 0, 0, 0.10);
+  .card-hover {
+    @apply card hover:border-primary-300 dark:hover:border-primary-700 hover:-translate-y-0.5;
   }
 
-  /* ----- Glassmorphism Navbar ----- */
-  .glass-nav {
-    @apply backdrop-blur-xl bg-white/70 dark:bg-surface-950/70 border-b border-glass-border dark:border-glass-border-dark;
-  }
-
-  /* ----- Glassmorphism Buttons ----- */
-  .btn-glass {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-glass-sm font-medium
-           backdrop-blur-md bg-glass-light dark:bg-glass-dark border border-glass-border dark:border-glass-border-dark
-           text-surface-800 dark:text-surface-100 shadow-glass-sm
-           transition-all duration-200 ease-out
-           hover:bg-glass-medium dark:hover:bg-glass-heavy hover:shadow-glass
-           active:scale-[0.97];
-  }
-
-  .btn-glass-primary {
-    @apply btn-glass bg-longmao-500/20 dark:bg-longmao-500/30 border-longmao-400/30 dark:border-longmao-400/20
-           text-longmao-700 dark:text-longmao-300
-           hover:bg-longmao-500/30 dark:hover:bg-longmao-500/40 hover:border-longmao-400/40;
-  }
-
-  .btn-glass-accent {
-    @apply btn-glass bg-longmao-500 text-white border-longmao-500
-           shadow-longmao-500/25
-           hover:bg-longmao-600 hover:shadow-longmao-500/40;
-  }
-
-  /* ----- Hero Section ----- */
-  .hero-section {
-    @apply relative overflow-hidden bg-gradient-to-b from-longmao-50/50 via-white to-white
-           dark:from-surface-950 dark:via-surface-950 dark:to-surface-900;
-  }
-
-  .hero-glow {
-    @apply absolute inset-0 bg-hero-glow pointer-events-none;
-  }
-
-  /* ----- Feature Grid Items ----- */
-  .feature-card {
-    @apply glass-card-hover p-6 flex flex-col items-start gap-4;
-  }
-
-  .feature-icon {
-    @apply flex items-center justify-center w-12 h-12 rounded-xl
-           bg-longmao-100 dark:bg-longmao-900/50 text-longmao-600 dark:text-longmao-400;
-  }
-
-  /* ----- Section Headers ----- */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-surface-900 dark:text-white tracking-tight;
+    @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white;
   }
 
   .section-subtitle {
-    @apply text-lg text-surface-500 dark:text-surface-400 max-w-2xl mx-auto;
+    @apply text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto;
   }
 
-  /* ----- Pricing Cards ----- */
-  .pricing-card {
-    @apply glass-card p-8 flex flex-col gap-6 relative overflow-hidden;
-  }
-
-  .pricing-card-featured {
-    @apply pricing-card border-longmao-400/40 dark:border-longmao-400/30 shadow-glass-lg;
-  }
-
-  .pricing-badge {
-    @apply absolute top-4 right-4 px-3 py-1 text-xs font-semibold uppercase tracking-wider
-           rounded-full bg-longmao-500 text-white;
-  }
-
-  /* ----- FAQ Accordion ----- */
-  .faq-item {
-    @apply glass-card-sm overflow-hidden transition-all duration-200;
-  }
-
-  .faq-question {
-    @apply w-full flex items-center justify-between px-6 py-4 text-left
-           font-medium text-surface-800 dark:text-surface-200
-           hover:bg-glass-light dark:hover:bg-glass-dark transition-colors;
-  }
-
-  .faq-answer {
-    @apply px-6 pb-4 text-surface-600 dark:text-surface-400 leading-relaxed;
-  }
-
-  /* ----- Wiki / Docs ----- */
-  .wiki-content {
-    max-width: none;
-    line-height: 1.75;
-    color: #334155;
-  }
-  .dark .wiki-content {
-    color: #cbd5e1;
-  }
-  .wiki-content h1, .wiki-content h2, .wiki-content h3, .wiki-content h4 {
-    font-family: 'Noto Sans SC', system-ui, sans-serif;
-    color: #0f172a;
-    font-weight: 700;
-  }
-  .dark .wiki-content h1, .dark .wiki-content h2, .dark .wiki-content h3, .dark .wiki-content h4 {
-    color: #ffffff;
-  }
-  .wiki-content a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  .wiki-content a:hover {
-    text-decoration: underline;
-  }
-  .dark .wiki-content a {
-    color: #60a5fa;
-  }
-  .wiki-content code {
-    color: #1d4ed8;
-    font-size: 0.875em;
-  }
-  .dark .wiki-content code {
-    color: #93c5fd;
-  }
-  .wiki-content pre {
-    background: #0f172a;
-    color: #f1f5f9;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-  }
-  .dark .wiki-content pre {
-    background: #020617;
-  }
-
-  /* ----- Tags / Badges ----- */
   .tag {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
-           bg-longmao-100 dark:bg-longmao-900/40 text-longmao-700 dark:text-longmao-300;
+    @apply inline-flex items-center px-2.5 py-0.5 text-xs font-medium rounded-full;
   }
 
-  .tag-surface {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
-           bg-surface-200 dark:bg-surface-800 text-surface-700 dark:text-surface-300;
-  }
-}
-
-/* =========================================================================
-   Utility Classes
-   ========================================================================= */
-
-@layer utilities {
-  /* ----- Text ----- */
-  .text-balance {
-    text-wrap: balance;
+  .tag-blue {
+    @apply tag bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-longmao-500 to-longmao-700 dark:from-longmao-400 dark:to-longmao-600;
+  .tag-green {
+    @apply tag bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300;
   }
 
-  .text-gradient-glow {
-    @apply text-gradient;
-    text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  .tag-yellow {
+    @apply tag bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300;
   }
 
-  /* ----- Backdrop ----- */
-  .backdrop-blur-glass {
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  .tag-purple {
+    @apply tag bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300;
   }
 
-  .backdrop-blur-glass-lg {
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  .tag-orange {
+    @apply tag bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300;
   }
 
-  /* ----- Borders ----- */
-  .border-gradient {
-    border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(96, 165, 250, 0.2)) 1;
+  .tag-cyan {
+    @apply tag bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300;
   }
 
-  /* ----- Animations ----- */
-  .animate-in {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animate-in-delay-1 { animation-delay: 0.1s; }
-  .animate-in-delay-2 { animation-delay: 0.2s; }
-  .animate-in-delay-3 { animation-delay: 0.3s; }
-  .animate-in-delay-4 { animation-delay: 0.4s; }
-  .animate-in-delay-5 { animation-delay: 0.5s; }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* ----- Glass overlay helper ----- */
-  .glass-overlay {
-    @apply absolute inset-0 backdrop-blur-sm bg-white/30 dark:bg-black/30;
+  .grid-pattern {
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
 }
 
@@ -300,40 +139,11 @@
    Dark Mode Overrides
    ========================================================================= */
 
-/* Dark mode specific adjustments for glassmorphism */
-.dark .glass-card,
-.dark .glass-card-sm,
-.dark .glass-card-lg {
-  border-color: rgba(255, 255, 255, 0.08);
+.dark .card {
+  border-color: rgba(255, 255, 255, 0.06);
+  background: rgba(30, 41, 59, 0.5);
 }
 
-/* Dark mode hero */
-.dark .hero-section {
-  background: linear-gradient(to bottom, #020617, #020617, #0f172a);
-}
-
-/* Dark mode feature icons */
-.dark .feature-icon {
-  background: #1e293b;
-  color: #60a5fa;
-}
-
-/* =========================================================================
-   Print Styles
-   ========================================================================= */
-
-@media print {
-  .glass-card,
-  .glass-card-sm,
-  .glass-card-lg {
-    backdrop-filter: none;
-    background: white;
-    border: 1px solid #e2e8f0;
-    box-shadow: none;
-  }
-
-  .glass-nav {
-    backdrop-filter: none;
-    background: white;
-  }
+.dark .card-hover:hover {
+  border-color: rgba(99, 102, 241, 0.3);
 }

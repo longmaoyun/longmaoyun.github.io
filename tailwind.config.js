@@ -5,91 +5,162 @@ module.exports = {
     './_layouts/**/*.html',
     './_includes/**/*.html',
     './pages/**/*.html',
-    './_wiki/**/*.html',
-    './_faq/**/*.html',
-    './_posts/**/*.html',
   ],
   darkMode: 'class',
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['"Noto Sans SC"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['"Noto Sans SC"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-      },
       colors: {
-        // Longmao Cloud brand palette — blue-white scheme with accent tones
-        longmao: {
-          50:  '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+        primary: {
+          50:  '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+          950: '#1e1b4b',
         },
-        // Glassmorphism-friendly surface colors
-        glass: {
-          light: 'rgba(255, 255, 255, 0.15)',
-          medium: 'rgba(255, 255, 255, 0.25)',
-          heavy: 'rgba(255, 255, 255, 0.35)',
-          dark: 'rgba(0, 0, 0, 0.10)',
-          border: 'rgba(255, 255, 255, 0.18)',
-          'border-dark': 'rgba(255, 255, 255, 0.08)',
+        accent: {
+          50:  '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          950: '#042f2e',
         },
-        // Neutral surface tones
         surface: {
-          50:  '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+          DEFAULT: '#0f172a',
+          light: '#1e293b',
+          lighter: '#334155',
+          card: '#1e293b',
+          border: '#334155',
         },
+        glass: {
+          light: 'rgba(255, 255, 255, 0.05)',
+          medium: 'rgba(255, 255, 255, 0.08)',
+          heavy: 'rgba(255, 255, 255, 0.12)',
+        }
       },
-      boxShadow: {
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        'glass-sm': '0 4px 16px 0 rgba(31, 38, 135, 0.25)',
-        'glass-lg': '0 12px 48px 0 rgba(31, 38, 135, 0.45)',
-        'inner-glow': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.15)',
-      },
-      backdropBlur: {
-        'glass': '12px',
-        'glass-lg': '20px',
-      },
-      borderRadius: {
-        'glass': '16px',
-        'glass-sm': '10px',
-        'glass-lg': '24px',
+      fontFamily: {
+        sans: ['"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'float-delayed': 'float 6s ease-in-out 2s infinite',
+        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        'fade-in-down': 'fade-in-down 0.8s ease-out forwards',
+        'fade-in-left': 'fade-in-left 0.8s ease-out forwards',
+        'fade-in-right': 'fade-in-right 0.8s ease-out forwards',
+        'slide-up': 'slide-up 0.6s ease-out forwards',
+        'scale-in': 'scale-in 0.5s ease-out forwards',
+        'spin-slow': 'spin 8s linear infinite',
+        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       keyframes: {
-        float: {
+        'float': {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.3), 0 0 10px rgba(59, 130, 246, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3)' },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
         },
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-down': {
+          '0%': { opacity: '0', transform: 'translateY(-40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-left': {
+          '0%': { opacity: '0', transform: 'translateX(-40px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-in-right': {
+          '0%': { opacity: '0', transform: 'translateX(40px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px) scale(0.95)' },
+          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        'scale-in': {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(99, 102, 241, 0.3)',
+        'glow-lg': '0 0 40px rgba(99, 102, 241, 0.4)',
+        'glow-accent': '0 0 20px rgba(20, 184, 166, 0.3)',
+        'inner-glow': 'inset 0 0 20px rgba(99, 102, 241, 0.1)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-glow': 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%)',
+        'hero-glow': 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
+        'card-glow': 'radial-gradient(ellipse at top right, rgba(99, 102, 241, 0.1) 0%, transparent 60%)',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    function ({ addUtilities }) {
+      const glassUtilities = {
+        '.glass': {
+          background: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          borderRadius: '0.75rem',
+        },
+        '.glass-dark': {
+          background: 'rgba(15, 23, 42, 0.75)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255, 255, 255, 0.06)',
+          borderRadius: '0.75rem',
+        },
+        '.glass-hover': {
+          transition: 'all 0.3s ease',
+        },
+        '.glass-hover:hover': {
+          background: 'rgba(255, 255, 255, 0.1)',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+          transform: 'translateY(-2px)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+        },
+        '.glass-card': {
+          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.06)',
+          borderRadius: '1rem',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+        },
+        '.glass-border': {
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+        },
+        '.glass-border-light': {
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+        },
+        '.noise-bg': {
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '256px 256px',
+          opacity: '0.03',
+        },
+      };
+      addUtilities(glassUtilities, ['responsive', 'hover']);
+    },
+  ],
 };

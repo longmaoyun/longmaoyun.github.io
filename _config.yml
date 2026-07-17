@@ -1,28 +1,29 @@
-# =============================================================================
-# 龙猫云机场 (Longmao Cloud) - Jekyll Configuration
-# GitHub Pages via github-pages meta-gem
-# =============================================================================
+# ─── 龙猫云机场 - Jekyll Config ───
 
-# ----- Site Settings -----
 title: 龙猫云机场
-email: support@longmaoyun.com
+tagline: 高速稳定的网络加速服务
 description: >-
-  龙猫云机场 - 高速稳定的网络加速服务，龙猫云提供全球节点、VPN加速、科学上网、翻墙工具。龙猫云机场支持全平台客户端下载，Shadowrocket/Clash/V2Ray一键配置。龙猫云，畅享全球互联。
-baseurl: ""
+  龙猫云机场提供高速稳定的网络加速服务，覆盖全球多个节点，
+  支持全平台客户端，畅享无障碍网络体验。龙猫云，畅享全球互联。
 url: "https://longmaoyun.github.io"
-twitter_username: longmaoyun
-github_username: longmaoyun
+baseurl: ""
 
-# ----- Build Settings -----
+# ─── 社交 ───
+author: 龙猫云机场
+logo: /assets/img/logo.png
+social:
+  name: 龙猫云机场
+  links:
+    - https://github.com/longmaoyun
+    - https://t.me/longmaoyun
+
+# ─── 主题设置 ───
+timezone: Asia/Shanghai
+lang: zh-CN
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+highlighter: rouge
 
-# No custom theme — using github-pages meta-gem which includes minima/primer
-theme: null
-
-# ----- Plugins -----
+# ─── 插件（github-pages 已内置） ───
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -30,11 +31,11 @@ plugins:
   - jekyll-paginate
   - jekyll-redirect-from
 
-# ----- Pagination -----
+# ─── 分页 ───
 paginate: 10
-paginate_path: "/page:num/"
+paginate_path: "/blog/page:num/"
 
-# ----- Collections -----
+# ─── 集合 ───
 collections:
   wiki:
     output: true
@@ -42,23 +43,20 @@ collections:
   faq:
     output: true
     permalink: /faq/:name/
-  pricing:
-    output: true
-    permalink: /pricing/:name/
 
-# ----- Defaults -----
+# ─── 默认 Front Matter ───
 defaults:
   - scope:
       path: ""
-      type: pages
+      type: "posts"
     values:
-      layout: page
-      permalink: /:basename/
+      layout: "post"
+      author: "龙猫云机场"
   - scope:
       path: ""
-      type: posts
+      type: "pages"
     values:
-      layout: post
+      layout: "page"
   - scope:
       path: ""
       type: wiki
@@ -69,52 +67,30 @@ defaults:
       type: faq
     values:
       layout: faq
-  - scope:
-      path: ""
-      type: pricing
-    values:
-      layout: page
-      permalink: /pricing/:name/
 
-# ----- Includes -----
-include:
-  - pages
-
-# ----- Excludes -----
-exclude:
-  - node_modules
-  - package.json
-  - tailwind.config.js
-  - postcss.config.js
-  - Gemfile.lock
-  - vendor
-  - scripts
-  - prompts
-  - content
-  - README.md
-  - .gitignore
-  - package-lock.json
-  - yarn.lock
-
-# ----- SEO -----
-logo: /assets/img/logo.png
-social:
-  name: 龙猫云机场
-  links:
-    - https://twitter.com/longmaoyun
-    - https://github.com/longmaoyun
-    - https://t.me/longmaoyun
-
-# ----- Timezone -----
-timezone: Asia/Shanghai
-
-# ----- Permalinks -----
-permalink: /blog/:year/:month/:day/:title/
-
-# ----- Feed -----
+# ─── Feed / RSS ───
 feed:
   path: /feed.xml
 
-# ----- Sitemap -----
-sitemap:
-  lastmod: true
+# ─── 包含目录 ───
+include:
+  - pages
+  - .well-known
+
+# ─── 排除 ───
+exclude:
+  - README.md
+  - package.json
+  - tailwind.config.js
+  - postcss.config.js
+  - node_modules
+  - scripts/
+  - prompts/
+  - content/
+  - Gemfile.lock
+  - vendor
+  - package-lock.json
+  - yarn.lock
+
+# ─── 固定链接 ───
+permalink: /blog/:year/:month/:day/:title/
