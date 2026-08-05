@@ -3,7 +3,7 @@
 > **龙猫云机场**旗下知识站点，专注于 Shadowrocket（小火箭）下载安装、Apple 美区 ID 注册使用、小火箭共享账号与独享账号等实用教程。所有内容以知识分享为目的，帮助用户顺利完成下载、安装和配置流程。
 
 <p align="center">
-  <img src="img/banner-shadowrocket.webp" alt="龙猫云机场 - Shadowrocket 小火箭下载与 Apple ID 使用指南" width="100%" />
+  <img src="img/clash订阅地址.png" alt="龙猫云机场 - Shadowrocket 小火箭下载与 Apple ID 使用指南" width="100%" />
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@
 Shadowrocket 是一款在 iOS 平台运行的网络工具，因为图标是一枚火箭，很多用户习惯叫它"小火箭"。在 App Store 上架以来，Shadowrocket 已经积累了相当数量的用户，尤其是在需要访问海外服务的场景下，小火箭几乎是 iPhone 用户绕不开的一个应用。
 
 <p align="center">
-  <img src="img/shadowrocket-intro.webp" alt="Shadowrocket 小火箭应用界面介绍" width="80%" />
+  <img src="img/clash节点购买.png" alt="Shadowrocket 小火箭应用界面介绍" width="80%" />
 </p>
 
 *Shadowrocket 的主界面设计简洁直观，连接状态、延迟数据、流量统计一目了然。对于刚接触的用户来说，上手难度不高，但需要正确配置才能发挥作用。*
@@ -78,7 +78,7 @@ Shadowrocket 是 iOS 独占应用，只在 App Store 上架。这就意味着你
 下载 Shadowrocket 本身并不难，难的是"在正确的地区找到它"。这一章会覆盖从搜索到安装的完整流程，以及常见问题的处理方法。
 
 <p align="center">
-  <img src="img/shadowrocket-download.webp" alt="Shadowrocket 小火箭 App Store 下载页面" width="80%" />
+  <img src="img/v2rayng免费节点.png" alt="Shadowrocket 小火箭 App Store 下载页面" width="80%" />
 </p>
 
 *在美区 App Store 中搜索 "Shadowrocket"，第一个结果一般就是。注意辨别，开发者是 Shadowrocket（或显示为 Shadow Launch Technology Limited），价格通常在 $2.99 左右。*
