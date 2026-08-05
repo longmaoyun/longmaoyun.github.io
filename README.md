@@ -132,7 +132,7 @@ Shadowrocket 下载完成后，建议立即在 App Store 中切换回你自己�
 Apple 美区 ID 就是注册地区为美国的 Apple ID。苹果的 App Store 在不同国家/地区上架的应用是不同的，有些应用只能在特定地区的 App Store 找到。Shadowrocket 就是其中之一 —— 它在美区 App Store 正常上架，但在中国区 App Store 中无法搜索到。
 
 <p align="center">
-  <img src="img/apple-us-id.webp" alt="Apple 美区 ID 注册和使用示意图" width="80%" />
+  <img src="img/clash for windows免费节点.png" alt="Apple 美区 ID 注册和使用示意图" width="80%" />
 </p>
 
 *Apple 美区 ID 的注册流程并不复杂，关键是选择正确的地区、填写有效的美国地址，以及付款方式选择 "None"。注册完成后可以在 App Store 中正常使用。*
@@ -176,7 +176,7 @@ Apple 美区 ID 就是注册地区为美国的 Apple ID。苹果的 App Store �
 小火箭共享账号是指多人共用一个已购买 Shadowrocket 的 Apple ID。这种方式的优势是成本低、使用方便，适合只需要下载一次应用的用户。
 
 <p align="center">
-  <img src="img/share-account.webp" alt="小火箭共享账号使用说明" width="80%" />
+  <img src="img/clash for windows节点.png" alt="小火箭共享账号使用说明" width="80%" />
 </p>
 
 *小火箭共享账号的使用流程很简单：在 App Store 登录共享账号 → 搜索 Shadowrocket → 下载 → 切换回自己的 Apple ID。整个过程只需要几分钟。*
@@ -222,7 +222,7 @@ Apple 美区 ID 就是注册地区为美国的 Apple ID。苹果的 App Store �
 小火箭独享账号就是你自己注册或购买的、只有你一个人使用的 Apple 美区 ID。与共享账号最大的区别是：独享账号的密码只有你自己知道，不会被别人修改或停用。
 
 <p align="center">
-  <img src="img/private-account.webp" alt="小火箭独享账号与共享账号对比" width="80%" />
+  <img src="img/clash verge节点购买.png" alt="小火箭独享账号与共享账号对比" width="80%" />
 </p>
 
 *独享账号的优势在于完全自主控制。你可以随时登录、随时下载、随时更新，不用担心账号被其他人修改密码或开启双重认证。*
