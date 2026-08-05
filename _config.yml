@@ -43,6 +43,8 @@ collections:
   faq:
     output: true
     permalink: /faq/:name/
+  pricing:
+    output: false
 
 # ─── 默认 Front Matter ───
 defaults:
