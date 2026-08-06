@@ -68,11 +68,8 @@ description: "小火箭更新显示要求逾时怎么解决？为什么一到订
 机场名称：GOGOCloud
 
 <h2>GOGOCloud 测评：BGP中转 + IEPL 专线，晚高峰表现稳不稳？
-
-![clash for windows节点](/img/clash%20for%20windows%E8%8A%82%E7%82%B9.png)
-
 </h2>
-
+![clash for windows节点](/img/clash%20for%20windows%E8%8A%82%E7%82%B9.png)
 <p>GOGOCloud 是我最近测到的一家偏“实用派”的机场，主打 BGP 中转和 IEPL 专线组合，整体思路很明确：平时走高性价比线路，到了晚上流量高峰再靠专线兜底。实测下来，它不是那种花里胡哨的类型，但在晚高峰时段的稳定性确实比不少同价位节点更让人省心。线路节点以香港、日本、新加坡和美国西岸为主，部分入口会自动切换到更优路径，日常刷网页、看视频、远程办公都比较顺手。</p>
 
 <table>
