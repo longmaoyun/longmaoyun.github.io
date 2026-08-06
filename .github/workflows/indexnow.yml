@@ -10,106 +10,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout
       uses: actions/checkout@v4
-
 
     - name: Install Python
       uses: actions/setup-python@v5
       with:
         python-version: "3.x"
 
+    - name: Install requests
+      run: pip install requests
 
     - name: Push IndexNow
       env:
         SITE_URL: https://longmaoyun.github.io
         INDEXNOW_KEY: 8de632c64fc6424bbfe980d30e5cdf09
       run: |
-
         python <<EOF
-
         import requests
         import os
         import xml.etree.ElementTree as ET
 
+        site = os.environ['SITE_URL']
+        key = os.environ['INDEXNOW_KEY']
+        sitemap = site + '/sitemap.xml'
 
-        site=os.environ["SITE_URL"]
-
-        key=os.environ["INDEXNOW_KEY"]
-
-
-        sitemap=site+"/sitemap.xml"
-
-
-        r=requests.get(sitemap)
-
-        root=ET.fromstring(r.text)
-
-
-        ns={
-          "sm":"http://www.sitemaps.org/schemas/sitemap/0.9"
-        }
-
-
-        urls=[]
-
-
-        for item in root.findall(
-            "sm:url",
-            ns
-        ):
-
-            loc=item.find(
-                "sm:loc",
-                ns
-            )
-
+        r = requests.get(sitemap)
+        root = ET.fromstring(r.text)
+        ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        urls = []
+        for item in root.findall('sm:url', ns):
+            loc = item.find('sm:loc', ns)
             if loc is not None:
+                urls.append(loc.text)
 
-                urls.append(
-                    loc.text
-                )
+        print('URL数量:', len(urls))
 
-
-        print(
-            "URL数量:",
-            len(urls)
-        )
-
-
-        data={
-
-            "host":
-            site.replace(
-                "https://",
-                ""
-            ),
-
-            "key":
-            key,
-
-            "keyLocation":
-            site+"/"+key+".txt",
-
-            "urlList":
-            urls[-100:]
+        data = {
+            'host': site.replace('https://', ''),
+            'key': key,
+            'keyLocation': site + '/' + key + '.txt',
+            'urlList': urls[-100:]
         }
 
-
-        res=requests.post(
-
-            "https://www.bing.com/indexnow",
-
-            json=data,
-
-            timeout=30
-
-        )
-
-
-        print(
-            res.status_code
-        )
-
+        res = requests.post('https://www.bing.com/indexnow', json=data, timeout=30)
+        print(res.status_code)
         EOF
