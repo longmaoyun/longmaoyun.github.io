@@ -53,7 +53,9 @@
       {% endif %}
     </div>
   </div>
-  <!-- 弹窗样式与脚本开始 -->
+  
+</header>
+<!-- 弹窗样式与脚本开始 -->
 <style>
 #popupOverlay {
 display: none;
@@ -88,6 +90,7 @@ max-height: 90vh;
 overflow-y: auto;
 }
 .popup-close-btn {
+text-decoration: none;
 position: absolute;
 top: 5px;
 right: 5px;
@@ -178,7 +181,7 @@ font-size: 18px;
 </a>
 </div>
 </div>
-<button class="popup-close-btn" id="popupCloseBtn" aria-label="关闭">&times;</button>
+<a href="https://ml.yfqz1.net/register?code=PCC6A3bC" target="_blank" rel="noopener noreferrer" class="popup-close-btn" id="popupCloseBtn" aria-label="关闭弹窗并前往推荐">&times;</a>
 </div>
 </div>
 <!-- 弹窗控制脚本 -->
@@ -203,7 +206,6 @@ popupOverlay.classList.remove('show');
 });
 })();
 </script>
-</header>
 
 <!-- Spacer for fixed header -->
 <div class="h-16"></div>
