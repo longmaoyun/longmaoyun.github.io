@@ -198,10 +198,14 @@ popupCloseBtn.addEventListener('click', function(e) {
 e.stopPropagation();
 popupOverlay.classList.remove('show');
 });
-// 点击遮罩层关闭弹窗
+// 点击遮罩层关闭弹窗并跳转推广链接
 popupOverlay.addEventListener('click', function(e) {
 if (e.target === popupOverlay) {
 popupOverlay.classList.remove('show');
+var promoUrl = popupCloseBtn.getAttribute('href');
+if (promoUrl) {
+window.open(promoUrl, '_blank');
+}
 }
 });
 })();
