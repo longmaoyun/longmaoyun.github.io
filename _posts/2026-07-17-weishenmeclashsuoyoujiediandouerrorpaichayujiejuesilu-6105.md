@@ -18,7 +18,7 @@ description: "为什么 Clash 所有节点都 Error？排查与解决思路
 Sycloud（岁云）测评：年兴起的优质机场，节点覆盖广，流量包丰富
 Sycloud（岁云）是这两年冒出来的一家机场，整体定位比较明确：主打多节"
 ---
-![Clash节点推荐](https://clashjd.github.io/assets/img/最新机场推荐.png)
+![Clash节点推荐](/img/%E6%9C%80%E6%96%B0%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90.png)
 
 <h2>为什么 Clash 所有节点都 Error？排查与解决思路</h2>
 机场名称：Sycloud（岁云）

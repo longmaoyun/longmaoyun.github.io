@@ -18,7 +18,7 @@ description: "为什么 tun模式一打开就断网？常见原因与解决办�
 Coffee Cloud（咖啡云）测评：性价比路线，咖啡命名节点，支持私有协议
 Coffee Cloud（咖啡云）给人的第一印象就是“很会取"
 ---
-![Clash节点推荐](https://clashjd.github.io/assets/img/机场订阅免费.png)
+![Clash节点推荐](/img/%E6%9C%BA%E5%9C%BA%E8%AE%A2%E9%98%85%E5%85%8D%E8%B4%B9.png)
 
 <h2>为什么 tun模式一打开就断网？常见原因与解决办法</h2>
 机场名称：Coffee Cloud（咖啡云）

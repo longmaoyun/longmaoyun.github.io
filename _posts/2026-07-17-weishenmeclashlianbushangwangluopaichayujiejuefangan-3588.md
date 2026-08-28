@@ -18,7 +18,7 @@ description: "为什么 Clash 连不上网络？排查与解决方案
 Askahh机场 - 常有测速数据更新的活跃机场。
 Askahh机场给人的第一印象就是“更新勤快、信息透明”，官方经常会放出新的测速截图和节点变动记录，适合想随时"
 ---
-![Clash节点推荐](https://clashjd.github.io/assets/img/小火箭节点购买.png)
+![Clash节点推荐](/img/%E5%B0%8F%E7%81%AB%E7%AE%AD%E8%8A%82%E7%82%B9%E8%B4%AD%E4%B9%B0.png)
 
 <h2>为什么 Clash 连不上网络？排查与解决方案</h2>
 机场名称：Askahh机场

@@ -14,7 +14,7 @@ tags:
 keywords: "节点分享,免费节点,免费订阅,免费节点分享,免费订阅链接,免费节点机场,Clash 配置文件"
 description: "为什么 Clash 全是 error？常见原因及排查指南 在使用 Clash 进行网络连接时，不少用户会遇到各种各样的 error 信息，这无疑会影响到使用体验。当您发现为什么 Clash 全是 error，通常意味着配置、节点或环境等方面"
 ---
-![Clash节点推荐](https://clashjd.github.io/assets/img/机场节点推荐.png)
+![Clash节点推荐](/img/%E6%9C%BA%E5%9C%BA%E8%8A%82%E7%82%B9%E6%8E%A8%E8%8D%90.png)
 
 <h2>为什么 Clash 全是 error？常见原因及排查指南</h2> <p>在使用 Clash 进行网络连接时，不少用户会遇到各种各样的 error 信息，这无疑会影响到使用体验。当您发现<strong>为什么 Clash 全是 error</strong>，通常意味着配置、节点或环境等方面存在一些问题。本文旨在深入探讨导致 Clash 出现 error 的主要原因，并提供一套实用的排查思路和解决方案，帮助您恢复顺畅的网络访问。</p>
 机场名称：白月光机场
