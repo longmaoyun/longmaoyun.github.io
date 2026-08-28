@@ -1,5 +1,5 @@
 # robots.txt for 龙猫云机场
-# https://www.longmaoyun.com
+# https://longmaoyun.github.io
 
 User-agent: *
 Allow: /
@@ -25,10 +25,10 @@ Disallow: /scripts/
 Disallow: /prompts/
 
 # Sitemap
-Sitemap: https://www.longmaoyun.com/sitemap.xml
+Sitemap: https://longmaoyun.github.io/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 10
 
 # Host
-Host: https://www.longmaoyun.com
+Host: https://longmaoyun.github.io

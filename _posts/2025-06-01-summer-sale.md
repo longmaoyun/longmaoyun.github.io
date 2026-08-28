@@ -47,7 +47,7 @@ image: /assets/images/blog/promotion.jpg
 
 ### 📌 参与方式
 
-1. 登录龙猫云机场官网 [www.longmaoyun.com](/)
+1. 登录龙猫云机场官网 [longmaoyun.github.io](/)
 2. 进入「套餐定价」页面选择您需要的套餐
 3. 结算时系统将自动应用活动折扣
 4. 完成支付，立即享受加速体验
