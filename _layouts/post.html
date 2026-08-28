@@ -127,8 +127,8 @@ layout: default
       <div class="sidebar-widget">
         <h3 class="sidebar-widget-title"><i class="fas fa-fire"></i>热门文章</h3>
         <div class="sidebar-list">
-          {% assign hot_posts = site.posts | sort: 'date' | reverse | first: 5 %}
-          {% for post in hot_posts %}
+          {% assign hot_posts = site.posts | sort: 'date' | reverse %}
+          {% for post in hot_posts limit: 5 %}
           <a href="{{ post.url | relative_url }}">
             {{ post.title }}
             <div class="sidebar-item-date"><i class="far fa-calendar-alt mr-1"></i>{{ post.date | date: "%Y-%m-%d" }}</div>
@@ -193,8 +193,8 @@ layout: default
               {% assign all_tags = all_tags | push: tag %}
             {% endfor %}
           {% endfor %}
-          {% assign uniq_tags = all_tags | uniq | first: 12 %}
-          {% for tag in uniq_tags %}
+          {% assign uniq_tags = all_tags | uniq %}
+          {% for tag in uniq_tags limit: 12 %}
           <a href="{{ '/tags/' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>
           {% endfor %}
         </div>

@@ -180,8 +180,8 @@ layout: default
               {% assign all_tags = all_tags | push: tag %}
             {% endfor %}
           {% endfor %}
-          {% assign uniq_tags = all_tags | uniq | first: 12 %}
-          {% for tag in uniq_tags %}
+          {% assign uniq_tags = all_tags | uniq %}
+          {% for tag in uniq_tags limit: 12 %}
           <a href="{{ '/wiki/?tag=' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>
           {% endfor %}
         </div>
