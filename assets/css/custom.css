@@ -193,7 +193,8 @@
 }
 @media (min-width: 1024px) {
   .post-layout {
-    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-columns: minmax(0, 48rem) 300px;
+    justify-content: center;
     align-items: start;
   }
   .post-layout .post-main {
