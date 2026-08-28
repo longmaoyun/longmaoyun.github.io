@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v1.0.0';
+const CACHE_VERSION = 'v1.1.0';
 const STATIC_CACHE = `longmaoyun-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `longmaoyun-dynamic-${CACHE_VERSION}`;
 const IMMUTABLE_CACHE = `longmaoyun-immutable-${CACHE_VERSION}`;

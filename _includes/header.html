@@ -187,25 +187,39 @@ font-size: 18px;
 <!-- 弹窗控制脚本 -->
 <script>
 (function() {
-const popupOverlay = document.getElementById('popupOverlay');
-const popupCloseBtn = document.getElementById('popupCloseBtn');
-window.addEventListener('DOMContentLoaded', function() {
-setTimeout(() => {
+var popupOverlay = document.getElementById('popupOverlay');
+var popupCloseBtn = document.getElementById('popupCloseBtn');
+if (!popupOverlay || !popupCloseBtn) return;
+// 立即显示弹窗（先弹窗后网页），并锁定页面滚动
+function showPopup() {
 popupOverlay.classList.add('show');
-}, 8000);
+document.body.style.overflow = 'hidden';
+}
+function hidePopup() {
+popupOverlay.classList.remove('show');
+document.body.style.overflow = '';
+}
+window.addEventListener('DOMContentLoaded', function() {
+showPopup();
 });
 popupCloseBtn.addEventListener('click', function(e) {
 e.stopPropagation();
-popupOverlay.classList.remove('show');
+hidePopup();
 });
 // 点击遮罩层关闭弹窗并跳转推广链接
 popupOverlay.addEventListener('click', function(e) {
 if (e.target === popupOverlay) {
-popupOverlay.classList.remove('show');
+hidePopup();
 var promoUrl = popupCloseBtn.getAttribute('href');
 if (promoUrl) {
 window.open(promoUrl, '_blank');
 }
+}
+});
+// ESC 键关闭
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+hidePopup();
 }
 });
 })();
