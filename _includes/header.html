@@ -190,19 +190,42 @@ font-size: 18px;
 var popupOverlay = document.getElementById('popupOverlay');
 var popupCloseBtn = document.getElementById('popupCloseBtn');
 if (!popupOverlay || !popupCloseBtn) return;
-// 立即显示弹窗（先弹窗后网页），并锁定页面滚动
+var locked = false;
+function lockScroll() {
+if (locked) return;
+locked = true;
+document.body.style.overflow = 'hidden';
+document.documentElement.style.overflow = 'hidden';
+document.addEventListener('touchmove', preventBgScroll, { passive: false });
+document.addEventListener('wheel', preventBgScroll, { passive: false });
+}
+function unlockScroll() {
+if (!locked) return;
+locked = false;
+document.body.style.overflow = '';
+document.documentElement.style.overflow = '';
+document.removeEventListener('touchmove', preventBgScroll);
+document.removeEventListener('wheel', preventBgScroll);
+}
+function preventBgScroll(e) {
+if (popupOverlay.classList.contains('show')) {
+e.preventDefault();
+}
+}
+// 立即显示弹窗（先弹窗后网页），弹窗期间锁定背后滚动
 function showPopup() {
 popupOverlay.classList.add('show');
-document.body.style.overflow = 'hidden';
+lockScroll();
 }
 function hidePopup() {
 popupOverlay.classList.remove('show');
-document.body.style.overflow = '';
+unlockScroll();
 }
 window.addEventListener('DOMContentLoaded', function() {
 showPopup();
-});
+// 关闭按钮
 popupCloseBtn.addEventListener('click', function(e) {
+e.preventDefault();
 e.stopPropagation();
 hidePopup();
 });
@@ -218,9 +241,10 @@ window.open(promoUrl, '_blank');
 });
 // ESC 键关闭
 document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') {
+if (e.key === 'Escape' && popupOverlay.classList.contains('show')) {
 hidePopup();
 }
+});
 });
 })();
 </script>

@@ -4,7 +4,7 @@
   "description": "\u9f99\u732b\u4e91\u673a\u573a - Jekyll site with Tailwind CSS",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --minify",
+    "build:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --minify && cat ./assets/css/custom.css >> ./assets/css/main.css",
     "dev:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --watch"
   },
   "dependencies": {
