@@ -1,12 +1,12 @@
 ---
 layout: wiki
-title: "龙猫云机场快速入门指南"
-description: "从零开始，5 分钟内完成龙猫云机场的注册、订阅和连接，快速开始享受高速网络加速服务。包含 Clash、v2rayN、Shadowrocket 小火箭等全平台客户端配置教程。"
+title: "龙猫云机场快速入门指南 - 注册订阅连接全流程"
+description: "龙猫云机场快速入门教程，5 分钟完成注册、获取订阅链接、导入客户端并成功连接。附 Clash Verge、v2rayN、Shadowrocket 小火箭等全平台客户端详细配置步骤，新手也能轻松上手。"
 category: "快速入门"
 author: "龙猫云团队"
 date: 2025-06-01
 tags: [入门, 注册, 订阅, 连接, Clash, v2rayN, Shadowrocket, 小火箭, 节点, 机场]
-keywords: "机场快速入门,Clash机场教程,v2rayN教程,Shadowrocket教程,小火箭使用教程,科学上网入门,翻墙教程,机场订阅链接,Clash订阅,节点连接教程,网络加速教程,龙猫云使用教程"
+keywords: "机场快速入门,Clash机场教程,v2rayN教程,Shadowrocket教程,小火箭使用教程,科学上网入门,翻墙教程,机场订阅链接,Clash订阅,节点连接教程,网络加速教程,龙猫云使用教程,机场怎么用"
 ---
 
 ## 欢迎使用龙猫云机场

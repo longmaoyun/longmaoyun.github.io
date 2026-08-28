@@ -840,3 +840,258 @@
 .dark .faq-block p { color: #cbd5e1; }
 .faq-block p strong { color: #4338ca; }
 .dark .faq-block p strong { color: #a5b4fc; }
+
+/* ---------- 套餐定价页面 ---------- */
+.pricing-section {
+  padding: 3rem 0 4.5rem;
+  background: #fff;
+}
+.dark .pricing-section { background: #0f172a; }
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.toggle-label { font-size: 0.95rem; font-weight: 600; color: #6b7280; }
+.dark .toggle-label { color: #9ca3af; }
+.toggle-label .badge {
+  font-size: 0.7rem; background: #dcfce7; color: #16a34a;
+  padding: 0.15rem 0.5rem; border-radius: 9999px; margin-left: 0.25rem;
+  font-weight: 700; vertical-align: middle;
+}
+.dark .toggle-label .badge { background: rgba(22,163,74,0.2); color: #4ade80; }
+.switch {
+  position: relative; display: inline-block; width: 52px; height: 28px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: #cbd5e1; transition: 0.3s; border-radius: 28px;
+}
+.dark .slider { background: #475569; }
+.slider:before {
+  content: ""; position: absolute; height: 22px; width: 22px;
+  left: 3px; bottom: 3px; background: #fff; transition: 0.3s;
+  border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+input:checked + .slider { background: linear-gradient(90deg, #4f46e5, #6366f1); }
+input:checked + .slider:before { transform: translateX(24px); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; } }
+.pricing-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.2rem;
+  padding: 1.8rem 1.5rem;
+  transition: all 0.25s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.dark .pricing-card {
+  background: rgba(30,41,59,0.55);
+  border-color: rgba(55,65,81,0.6);
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+  border-color: #a5b4fc;
+}
+.dark .pricing-card:hover { border-color: rgba(99,102,241,0.4); }
+.pricing-card.featured {
+  border: 2px solid #6366f1;
+  box-shadow: 0 8px 24px rgba(99,102,241,0.2);
+}
+.dark .pricing-card.featured { border-color: #818cf8; }
+.pricing-badge {
+  position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  color: #fff; font-size: 0.75rem; font-weight: 700;
+  padding: 0.25rem 1rem; border-radius: 9999px;
+  white-space: nowrap;
+}
+.pricing-card-header { text-align: center; margin-bottom: 1.2rem; }
+.plan-name { font-size: 1.15rem; font-weight: 700; color: #111827; margin-bottom: 0.35rem; }
+.dark .plan-name { color: #f9fafb; }
+.plan-description { font-size: 0.85rem; color: #6b7280; line-height: 1.5; }
+.dark .plan-description { color: #9ca3af; }
+.pricing-card-body { flex: 1; }
+.price-wrapper { text-align: center; margin-bottom: 0.5rem; }
+.currency { font-size: 1.1rem; font-weight: 700; color: #6b7280; vertical-align: top; line-height: 2.5; }
+.dark .currency { color: #9ca3af; }
+.price { font-size: 2.5rem; font-weight: 800; color: #111827; line-height: 1; }
+.dark .price { color: #f9fafb; }
+.period { font-size: 0.9rem; color: #6b7280; }
+.dark .period { color: #9ca3af; }
+.yearly-saving { text-align: center; font-size: 0.8rem; color: #16a34a; font-weight: 600; margin-bottom: 1rem; }
+.dark .yearly-saving { color: #4ade80; }
+.plan-features { list-style: none; padding: 0; margin: 0 0 0.8rem; }
+.plan-features li {
+  padding: 0.45rem 0; font-size: 0.88rem; color: #4b5563;
+  display: flex; align-items: flex-start; gap: 0.5rem;
+}
+.dark .plan-features li { color: #cbd5e1; }
+.plan-features li i { margin-top: 0.15rem; }
+.plan-features li .fa-check-circle { color: #22c55e; }
+.plan-features.limited li { color: #9ca3af; }
+.dark .plan-features.limited li { color: #6b7280; }
+.plan-features.limited li .fa-times-circle { color: #d1d5db; }
+.dark .plan-features.limited li .fa-times-circle { color: #4b5563; }
+.pricing-card-footer { margin-top: 1.2rem; }
+.btn-lg { padding: 0.75rem 1.5rem; font-size: 0.95rem; border-radius: 0.6rem; }
+.btn-block { width: 100%; }
+.pricing-compare { margin-top: 2.5rem; }
+.pricing-compare h2 { font-size: 1.4rem; font-weight: 800; color: #111827; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+.dark .pricing-compare h2 { color: #f9fafb; }
+.table-responsive { overflow-x: auto; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.compare-table th, .compare-table td {
+  padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb;
+}
+.dark .compare-table th, .dark .compare-table td { border-color: rgba(55,65,81,0.6); }
+.compare-table th { background: #f9fafb; font-weight: 700; color: #111827; }
+.dark .compare-table th { background: rgba(30,41,59,0.5); color: #f9fafb; }
+.compare-table td { color: #4b5563; }
+.dark .compare-table td { color: #cbd5e1; }
+.compare-table tr:hover td { background: #faf5ff; }
+.dark .compare-table tr:hover td { background: rgba(30,41,59,0.4); }
+.pricing-faq { margin-top: 2.5rem; }
+.pricing-faq h2 { font-size: 1.4rem; font-weight: 800; color: #111827; margin-bottom: 1.2rem; }
+.dark .pricing-faq h2 { color: #f9fafb; }
+.pricing-faq .faq-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+@media (max-width: 640px) { .pricing-faq .faq-list { grid-template-columns: 1fr; } }
+.pricing-faq .faq-item {
+  background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.9rem;
+  padding: 1.2rem 1.4rem; transition: all 0.2s;
+}
+.dark .pricing-faq .faq-item { background: rgba(30,41,59,0.4); border-color: rgba(55,65,81,0.5); }
+.pricing-faq .faq-item:hover { border-color: #c7d2fe; }
+.dark .pricing-faq .faq-item:hover { border-color: rgba(99,102,241,0.3); }
+.pricing-faq .faq-item h4 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 0.4rem; }
+.dark .pricing-faq .faq-item h4 { color: #f9fafb; }
+.pricing-faq .faq-item p { font-size: 0.85rem; color: #6b7280; line-height: 1.7; }
+.dark .pricing-faq .faq-item p { color: #9ca3af; }
+
+/* ---------- 下载页面 ---------- */
+.download-section { padding: 3rem 0 4.5rem; background: #fff; }
+.dark .download-section { background: #0f172a; }
+.platform-block {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.2rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.25s;
+}
+.dark .platform-block {
+  background: rgba(30,41,59,0.55);
+  border-color: rgba(55,65,81,0.6);
+}
+.platform-block:hover { border-color: #a5b4fc; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+.dark .platform-block:hover { border-color: rgba(99,102,241,0.3); }
+.platform-header {
+  display: flex; align-items: center; gap: 0.8rem;
+  background: #f9fafb; padding: 1.1rem 1.5rem; border-bottom: 1px solid #e5e7eb;
+}
+.dark .platform-header { background: rgba(30,41,59,0.6); border-color: rgba(55,65,81,0.6); }
+.platform-icon {
+  width: 44px; height: 44px; border-radius: 0.7rem;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.platform-icon i { font-size: 1.3rem; color: #fff; }
+.platform-header h2 { font-size: 1.1rem; font-weight: 700; color: #111827; }
+.dark .platform-header h2 { color: #f9fafb; }
+.platform-content { padding: 1.4rem 1.5rem; }
+.platform-content p { font-size: 0.9rem; color: #4b5563; line-height: 1.8; margin-bottom: 1rem; }
+.dark .platform-content p { color: #cbd5e1; }
+.platform-content p:last-of-type { margin-bottom: 1.2rem; }
+.download-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+.download-actions .btn { padding: 0.6rem 1.1rem; font-size: 0.85rem; }
+.btn-secondary {
+  background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb;
+  transition: all 0.25s;
+}
+.dark .btn-secondary { background: rgba(55,65,81,0.4); color: #cbd5e1; border-color: rgba(55,65,81,0.6); }
+.btn-secondary:hover { background: #e5e7eb; border-color: #d1d5db; }
+.dark .btn-secondary:hover { background: rgba(75,85,99,0.5); border-color: rgba(75,85,99,0.8); }
+.system-requirements {
+  background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.7rem; padding: 1rem 1.2rem;
+}
+.dark .system-requirements { background: rgba(30,41,59,0.4); border-color: rgba(55,65,81,0.5); }
+.system-requirements h4 { font-size: 0.82rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.dark .system-requirements h4 { color: #9ca3af; }
+.system-requirements ul { list-style: none; padding: 0; margin: 0; }
+.system-requirements li { font-size: 0.85rem; color: #4b5563; padding: 0.2rem 0; position: relative; padding-left: 1rem; }
+.dark .system-requirements li { color: #cbd5e1; }
+.system-requirements li::before { content: "•"; position: absolute; left: 0; color: #6366f1; }
+
+/* ---------- 教程中心页面 ---------- */
+.tutorial-section { padding: 3rem 0 4.5rem; background: #fff; }
+.dark .tutorial-section { background: #0f172a; }
+.tutorial-intro {
+  background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 0.9rem;
+  padding: 1.4rem 1.6rem; margin-bottom: 2.5rem;
+  color: #4b5563; line-height: 1.8; font-size: 0.95rem;
+}
+.dark .tutorial-intro {
+  background: rgba(49,46,129,0.2); border-color: rgba(99,102,241,0.3); color: #cbd5e1;
+}
+.tutorial-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 640px) { .tutorial-categories { grid-template-columns: 1fr; } }
+.tutorial-category {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 1rem;
+  padding: 1.5rem; transition: all 0.25s;
+}
+.dark .tutorial-category { background: rgba(30,41,59,0.55); border-color: rgba(55,65,81,0.6); }
+.tutorial-category:hover { border-color: #a5b4fc; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+.dark .tutorial-category:hover { border-color: rgba(99,102,241,0.3); }
+.category-icon {
+  width: 40px; height: 40px; border-radius: 0.7rem;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.8rem;
+}
+.category-icon i { font-size: 1.1rem; color: #fff; }
+.category-title { font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 0.35rem; }
+.dark .category-title { color: #f9fafb; }
+.category-desc { font-size: 0.82rem; color: #6b7280; line-height: 1.6; margin-bottom: 0.8rem; }
+.dark .category-desc { color: #9ca3af; }
+.tutorial-list { list-style: none; padding: 0; margin: 0; }
+.tutorial-list li { padding: 0.35rem 0; }
+.tutorial-list a {
+  font-size: 0.88rem; color: #4f46e5; text-decoration: none;
+  display: flex; align-items: center; gap: 0.4rem;
+  transition: color 0.2s;
+}
+.dark .tutorial-list a { color: #a5b4fc; }
+.tutorial-list a::before {
+  content: "\f105"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+  font-size: 0.75rem; color: #9ca3af; transition: color 0.2s;
+}
+.tutorial-list a:hover { color: #4338ca; }
+.dark .tutorial-list a:hover { color: #818cf8; }
+.tutorial-list a:hover::before { color: #6366f1; }
+.tutorial-cta {
+  background: #f9fafb; border: 1px dashed #d1d5db; border-radius: 0.9rem;
+  padding: 1.5rem; text-align: center;
+}
+.dark .tutorial-cta { background: rgba(30,41,59,0.4); border-color: rgba(75,85,99,0.6); }
+.tutorial-cta h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 0.4rem; }
+.dark .tutorial-cta h3 { color: #f9fafb; }
+.tutorial-cta p { font-size: 0.85rem; color: #6b7280; }
+.dark .tutorial-cta p { color: #9ca3af; }
+.tutorial-cta a { color: #4f46e5; text-decoration: underline; }
