@@ -57,177 +57,151 @@
 </header>
 <!-- 弹窗样式与脚本开始 -->
 <style>
-#popupOverlay {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.5);
-backdrop-filter: blur(4px);
--webkit-backdrop-filter: blur(4px);
-align-items: center;
-justify-content: center;
-z-index: 9999;
-padding: 10px;
-box-sizing: border-box;
-}
-#popupOverlay.show {
-display: flex;
-}
-.popup-content {
-background: #fff;
-padding: 20px 30px;
-border-radius: 12px;
-max-width: 100%;
-width: 370px;
-text-align: center;
-position: relative;
-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-box-sizing: border-box;
-max-height: 90vh;
-overflow-y: auto;
-}
-.popup-close-btn {
-text-decoration: none;
-position: absolute;
-top: 5px;
-right: 5px;
-width: 32px;
-height: 32px;
-border-radius: 50%;
-background: rgba(0, 0, 0, 0.05);
-border: none;
-font-size: 20px;
-font-weight: bold;
-color: #999;
-cursor: pointer;
-transition: all 0.3s;
-flex-shrink: 0;
-touch-action: manipulation;
-display: flex;
-align-items: center;
-justify-content: center;
-line-height: 1;
-z-index: 10;
-}
-.popup-close-btn:hover {
-background: #f44336;
-color: #fff;
-}
-.popup-link {
-text-decoration: none;
-color: inherit;
-display: block;
-}
-.popup-title {
-margin: 0 0 10px;
-font-size: 24px;
-font-weight: bold;
-color: #ff4d4f;
-word-wrap: break-word;
-}
-.popup-image {
-width: 100%;
-max-width: 300px;
-height: auto;
-display: block;
-margin: 0 auto 15px;
-border-radius: 8px;
-}
-.popup-shop-btn {
-display: inline-block;
-width: 100%;
-background: #e11d48;
-color: #fff;
-font-weight: bold;
-padding: 12px 1px;
-border-radius: 8px;
-text-decoration: none;
-transition: background 0.3s;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.popup-shop-btn:hover {
-background: #be123c;
-}
-@media (max-width: 768px) {
-.popup-content {
-width: 95%;
-max-width: 320px;
-padding: 15px 20px;
-}
-.popup-title {
-font-size: 20px;
-}
-.popup-close-btn {
-width: 28px;
-height: 28px;
-font-size: 18px;
-}
-}
+  #popupOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  #popupOverlay.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .popup-content {
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 50%;
+    max-width: 560px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+
+
+  .popup-link-btn {
+    display: block;
+    width: 100%;
+    background: #fff;
+    color: #1f2937;
+    font-weight: bold;
+    padding: 16px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    border: 2px solid #e5e7eb;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .popup-link-btn:hover {
+    border-color: #e11d48;
+    color: #e11d48;
+  }
+
+  .popup-main-btn {
+    background: #e11d48;
+    color: #fff;
+    border-color: #e11d48;
+  }
+
+  .popup-main-btn:hover {
+    background: #be123c;
+    color: #fff;
+  }
+
+  .popup-shop-btn {
+    display: inline-block;
+    width: 100%;
+    background: #e11d48;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .popup-shop-btn:hover {
+    background: #be123c;
+  }
+
+  /* 移动端适配 */
+  @media (max-width: 768px) {
+    .popup-content {
+      width: 92%;
+      max-width: 420px;
+      padding: 15px 20px;
+    }
+
+  }
 </style>
+
 <!-- 弹窗 HTML 结构 -->
 <div id="popupOverlay">
-<div class="popup-content">
-<div style="display: flex; flex-direction: column; gap: 1rem;">
-<a href="https://ml.yfqz1.net/register?code=PCC6A3bC" target="_blank" class="popup-link">
-<p class="popup-title">Clash 机场推荐</p>
-<img src="https://xiaohuojianzhanghao.github.io/img/6a229370bf0c1.png" alt="机场地址" class="popup-image">
-</a>
-<a href="https://j134.net/?code=Wohf" target="_blank" class="popup-link">
-<p class="popup-title">备用机场推荐</p>
-<p style="color:#6b7280;font-size:14px;margin:2px 0 0;">j134.net 稳定高速线路</p>
-</a>
-<div style="border-top: 1px solid #f3f4f6; padding-top: 1rem;">
-<a href="http://shop.xinkonyun.cc/" target="_blank" class="popup-shop-btn">
-购买 Shadowrocket 独享账号/海外其他账号
-</a>
+  <div class="popup-content">
+    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+      <!-- 主推机场 -->
+      <a href="https://j134.net/?code=Wohf" target="_blank" class="popup-link-btn popup-main-btn">
+        ⭐ 疾风云 · 稳定快速节点多
+      </a>
+
+      <!-- 备用机场 -->
+      <a href="https://ml.yfqz1.net/register?code=PCC6A3bC" target="_blank" class="popup-link-btn">
+        杨帆云 · 超便宜
+      </a>
+
+      <!-- 分割线 -->
+      <div style="border-top: 1px solid #f3f4f6; padding-top: 0.8rem;">
+        <a href="https://shop.xinkonyun.cc/" target="_blank" class="popup-shop-btn">
+          🛒 购买 Shadowrocket 独享账号/海外其他账号
+        </a>
+      </div>
+    </div>
+
+  </div>
 </div>
-</div>
-<a href="https://ml.yfqz1.net/register?code=PCC6A3bC" target="_blank" rel="noopener noreferrer" class="popup-close-btn" id="popupCloseBtn" aria-label="关闭弹窗并前往推荐">&times;</a>
-</div>
-</div>
+
 <!-- 弹窗控制脚本 -->
 <script>
-(function() {
-var popupOverlay = document.getElementById('popupOverlay');
-var popupCloseBtn = document.getElementById('popupCloseBtn');
-if (!popupOverlay || !popupCloseBtn) return;
-// 弹窗不锁定页面滚动：用户可正常滑动浏览文章；关闭或手动移除弹窗后页面始终可滚
-function showPopup() {
-popupOverlay.classList.add('show');
-}
-function hidePopup() {
-popupOverlay.classList.remove('show');
-}
-window.addEventListener('DOMContentLoaded', function() {
-showPopup();
-// 关闭按钮
-popupCloseBtn.addEventListener('click', function(e) {
-e.preventDefault();
-e.stopPropagation();
-hidePopup();
-});
-// 点击遮罩层关闭弹窗并跳转推广链接
-popupOverlay.addEventListener('click', function(e) {
-if (e.target === popupOverlay) {
-hidePopup();
-var promoUrl = popupCloseBtn.getAttribute('href');
-if (promoUrl) {
-window.open(promoUrl, '_blank');
-}
-}
-});
-// ESC 键关闭
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape' && popupOverlay.classList.contains('show')) {
-hidePopup();
-}
-});
-});
-})();
+  (function() {
+    const popupOverlay = document.getElementById('popupOverlay');
+
+    // 页面解析完后先渲染网页，再延迟弹出
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        popupOverlay.classList.add('show');
+      }, 300);
+    });
+
+
+    // 点击遮罩层不关闭（强制引导），如需点击遮罩关闭可取消下面注释
+    /*
+    popupOverlay.addEventListener('click', function(e) {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('show');
+      }
+    });
+    */
+  })();
 </script>
+<!-- 弹窗样式与脚本结束 -->
 
 <!-- Spacer for fixed header -->
 <div class="h-16"></div>
